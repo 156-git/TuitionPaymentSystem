@@ -18,6 +18,8 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 -- Table structure for orders
 -- ----------------------------
+USE ordermanagement;
+
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `order_seq` int NOT NULL AUTO_INCREMENT,
