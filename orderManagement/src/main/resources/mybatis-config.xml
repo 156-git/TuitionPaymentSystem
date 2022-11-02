@@ -15,7 +15,7 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/photography?useSSL=false"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/ordermanagement?useSSL=false"/>
                 <property name="username" value="star"/>
                 <property name="password" value="521521WEY"/>
             </dataSource>

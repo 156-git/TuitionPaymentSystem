@@ -34,7 +34,7 @@ CREATE TABLE `orders` (
   KEY `student_number` (`stu_num`),
   KEY `student_name` (`stu_name`),
   KEY `student_class` (`stu_class`),
-  CONSTRAINT `student_class` FOREIGN KEY (`stu_class`) REFERENCES `students` (`user_class`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `student_class` FOREIGN KEY (`stu_class`) REFERENCES `students` (`stu_class`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `student_name` FOREIGN KEY (`stu_name`) REFERENCES `students` (`stu_name`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `student_number` FOREIGN KEY (`stu_num`) REFERENCES `students` (`stu_num`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `orders_chk_1` CHECK (((`order_state` >= 0) and (`order_state` <= 1)))
@@ -47,8 +47,8 @@ DROP TABLE IF EXISTS `students`;
 CREATE TABLE `students` (
   `stu_num` varchar(30) NOT NULL,
   `stu_name` varchar(20) NOT NULL,
-  `user_class` varchar(30) NOT NULL,
+  `stu_class` varchar(30) NOT NULL,
   PRIMARY KEY (`stu_num`),
   KEY `stu_name` (`stu_name`),
-  KEY `user_class` (`user_class`)
+  KEY `stu_class` (`stu_class`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
