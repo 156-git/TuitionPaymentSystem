@@ -20,35 +20,17 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 USE ordermanagement;
 
-DROP TABLE IF EXISTS `orders`;
-CREATE TABLE `orders` (
-  `order_seq` int NOT NULL AUTO_INCREMENT,
-  `order_num` varchar(30) NOT NULL,
-  `stu_num` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `stu_name` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `stu_class` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `stu_money` float NOT NULL,
-  `order_time` datetime NOT NULL,
-  `order_state` int NOT NULL DEFAULT '0',
-  PRIMARY KEY (`order_seq`,`order_num`),
-  KEY `student_number` (`stu_num`),
-  KEY `student_name` (`stu_name`),
-  KEY `student_class` (`stu_class`),
-  CONSTRAINT `student_class` FOREIGN KEY (`stu_class`) REFERENCES `students` (`stu_class`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `student_name` FOREIGN KEY (`stu_name`) REFERENCES `students` (`stu_name`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `student_number` FOREIGN KEY (`stu_num`) REFERENCES `students` (`stu_num`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `orders_chk_1` CHECK (((`order_state` >= 0) and (`order_state` <= 1)))
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3;
+create table orders
+(
+    order_seq   int auto_increment,
+    order_num   varchar(30)   not null,
+    stu_num     varchar(30)   not null,
+    stu_name    varchar(20)   not null,
+    stu_class   varchar(30)   not null,
+    stu_money   float         not null,
+    order_time  datetime      not null,
+    order_state int default 0 not null,
+    primary key (order_seq, order_num),
+    check ((`order_state` >= 0) and (`order_state` <= 1))
+);
 
--- ----------------------------
--- Table structure for students
--- ----------------------------
-DROP TABLE IF EXISTS `students`;
-CREATE TABLE `students` (
-  `stu_num` varchar(30) NOT NULL,
-  `stu_name` varchar(20) NOT NULL,
-  `stu_class` varchar(30) NOT NULL,
-  PRIMARY KEY (`stu_num`),
-  KEY `stu_name` (`stu_name`),
-  KEY `stu_class` (`stu_class`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;

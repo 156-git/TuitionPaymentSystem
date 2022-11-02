@@ -1,6 +1,6 @@
 package pojo;
 
-public class Orders {
+public class Order {
     private int order_seq;
     private  String order_num;
     private String stu_num;

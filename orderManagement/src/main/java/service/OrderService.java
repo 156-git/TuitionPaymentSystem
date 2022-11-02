@@ -12,8 +12,7 @@ public class OrderService {
     //查询总金额
     public float queryTotalAmount(){
         OrderMapper mapper = sqlSession.getMapper(OrderMapper.class);
-        float total=mapper.selectTotalAmount();
-        return total;
+        return mapper.selectTotalAmount();
     }
 
 

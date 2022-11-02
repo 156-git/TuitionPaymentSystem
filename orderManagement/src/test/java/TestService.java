@@ -10,4 +10,6 @@ public class TestService {
         float f=orderService.queryTotalAmount();
         System.out.println(f);
     }
+
+
 }
