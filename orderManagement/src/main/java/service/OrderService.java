@@ -10,9 +10,9 @@ public class OrderService {
     SqlSession sqlSession=factory.openSession();
 
     //查询总金额
-    public float queryToalAmount(){
+    public float queryTotalAmount(){
         OrderMapper mapper = sqlSession.getMapper(OrderMapper.class);
-        float total=mapper.selectToalAmount();
+        float total=mapper.selectTotalAmount();
         return total;
     }
 

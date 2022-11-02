@@ -7,7 +7,7 @@ public class TestService {
     @Test
     public void testTotalAmount(){
         OrderService orderService=new OrderService();
-        float f=orderService.queryToalAmount();
+        float f=orderService.queryTotalAmount();
         System.out.println(f);
     }
 }

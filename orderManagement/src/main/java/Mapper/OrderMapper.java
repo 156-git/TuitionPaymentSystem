@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Select;
 public interface OrderMapper {
     //查询并返回总金额
     @Select("select SUM(stu_money) from orders")
-    float selectToalAmount();
+    float selectTotalAmount();
 
     //根据订单号查询订单
 
