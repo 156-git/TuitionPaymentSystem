@@ -1,6 +1,7 @@
 package util;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
@@ -21,7 +22,11 @@ public class SqlSessionFactoryUtils {
     }
 
 
+    //返回工厂
     public static SqlSessionFactory getSqlSessionFactory(){
         return sqlSessionFactory;
     }
+
+
+
 }

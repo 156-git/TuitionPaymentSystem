@@ -1,7 +1,10 @@
 package Mapper;
 
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import pojo.Orders;
+import pojo.Order;
 
 public interface OrderMapper {
     //查询并返回总金额
@@ -14,13 +17,15 @@ public interface OrderMapper {
 
     //分页查询
 
-    //删除订单  通过order_seq删除
-    void deleteByOrder_seq(int order_seq);
+
+    //删除订单  通过订单号删除
+    @Delete("delete from orders where order_num=#{order_num}")
+    int deleteByOrder_num(String order_num);
 
     //删除订单  批量删除
-    void deleteByOrder_seqs(int[] order_seqs);
+    int deleteByOrder_nums(@Param("nums") String[] order_nums);
 
     //添加订单
-    void addOrder(Orders order);
+    int insertOrder(Order order);
 
 }

@@ -5,23 +5,16 @@
 <mapper namespace="Mapper.OrderMapper">
 
     <!--添加order,并返回主键-->
-    <insert id="addOrder" useGeneratedKeys="true" keyProperty="order_seq">
-        insert into orders(order_num, stu_num, stu_name, stu_class, stu_money, order_time, order_state)
-        values (#{order_num}, #{stu_num}, #{stu_name}, #{stu_class}, #{stu_money}, #{order_time}, #{order_state})
+    <insert id="insertOrder" >
+        insert into orders
+        values (null,#{order_num}, #{stu_num}, #{stu_name}, #{stu_class}, #{stu_money}, #{order_time}, #{order_state})
     </insert>
 
-    <!--通过order_seq删除-->
-    <delete id="deleteByOrder_seq">
-        delete
-        from orders
-        where order_seq = #{order_seq}
-    </delete>
-
-
-    <!--通过数组order_seqs批量删除-->
-    <delete id="deleteByOrder_seqs">
-        delete from orders where order_seq
-        in(<foreach collection="array" item="order_seq" separator=",">#{order_seq}</foreach>)
+    <!--通过数组order_nums批量删除-->
+    <delete id="deleteByOrder_nums" >
+        delete from orders
+        where order_num in
+        <foreach collection="nums" item="num" separator="," open="(" close=")">#{num}</foreach>
     </delete>
 
 </mapper>
