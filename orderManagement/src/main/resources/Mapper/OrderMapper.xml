@@ -4,5 +4,24 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Mapper.OrderMapper">
 
+    <!--添加order,并返回主键-->
+    <insert id="addOrder" useGeneratedKeys="true" keyProperty="order_seq">
+        insert into orders(order_num, stu_num, stu_name, stu_class, stu_money, order_time, order_state)
+        values (#{order_num}, #{stu_num}, #{stu_name}, #{stu_class}, #{stu_money}, #{order_time}, #{order_state})
+    </insert>
+
+    <!--通过order_seq删除-->
+    <delete id="deleteByOrder_seq">
+        delete
+        from orders
+        where order_seq = #{order_seq}
+    </delete>
+
+
+    <!--通过数组order_seqs批量删除-->
+    <delete id="deleteByOrder_seqs">
+        delete from orders where order_seq
+        in(<foreach collection="array" item="order_seq" separator=",">#{order_seq}</foreach>)
+    </delete>
 
 </mapper>
