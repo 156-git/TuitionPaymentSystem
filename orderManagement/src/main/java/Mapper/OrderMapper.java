@@ -1,6 +1,7 @@
 package Mapper;
 
 import org.apache.ibatis.annotations.Select;
+import pojo.Orders;
 
 public interface OrderMapper {
     //查询并返回总金额
@@ -13,10 +14,13 @@ public interface OrderMapper {
 
     //分页查询
 
-    //删除订单
+    //删除订单  通过order_seq删除
+    void deleteByOrder_seq(int order_seq);
+
+    //删除订单  批量删除
+    void deleteByOrder_seqs(int[] order_seqs);
 
     //添加订单
-
-
+    void addOrder(Orders order);
 
 }

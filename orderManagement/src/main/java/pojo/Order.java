@@ -2,7 +2,7 @@ package pojo;
 
 public class Order {
     private int order_seq;
-    private  String order_num;
+    private String order_num;
     private String stu_num;
     private String stu_name;
     private String stu_class;
