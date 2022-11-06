@@ -4,7 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
-import pojo.Orders;
+import pojo.Order;
 import service.OrderService;
 
 import java.io.IOException;
@@ -40,7 +40,7 @@ public class TestService {
         int order_state = 1;
 
 //        2.封装对象
-        Orders order = new Orders();
+        Order order = new Order();
         order.setOrder_num(order_num);
         order.setStu_num(stu_num);
         order.setStu_name(stu_name);
