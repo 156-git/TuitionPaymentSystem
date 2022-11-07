@@ -4,47 +4,35 @@ import Mapper.OrderMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import pojo.Order;
+import pojo.PageBean;
 import util.SqlSessionFactoryUtils;
 
-public class OrderService {
-    static SqlSessionFactory factory = SqlSessionFactoryUtils.getSqlSessionFactory();
-    static SqlSession sqlSession = factory.openSession(true);
-    static OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+import java.util.List;
+
+public interface OrderService {
+        //分页查询
+        PageBean<Order> queryByPage(int currentPage, int pageSize);
+
+
+        //查询总金额
+        float queryTotalAmount();
+
+
+        //添加订单
+        int addOrder(Order order);
+
+
+        //根据订单号删除订单
+        int deleteOrder(String order_num);
+
+
+        //根据一系列订单号删除订单
+        int deleteOrders(String [] order_nums);
 
 
 
+        //释放资源
+        void releasesqlSession();
 
-
-
-
-    //查询总金额
-    public float queryTotalAmount() {
-        return orderMapper.selectTotalAmount();
     }
 
-
-    //添加订单
-    public int addOrder(Order order){
-        return orderMapper.insertOrder(order);
-    }
-
-
-    //根据订单号删除订单
-    public  int deleteOrder(String order_num){
-      return  orderMapper.deleteByOrder_num(order_num);
-    }
-
-
-    //根据一系列订单号删除订单
-    public int deleteOrders(String [] order_nums){
-        return orderMapper.deleteByOrder_nums(order_nums);
-    }
-
-
-
-    //释放资源
-    public void releasesqlSession(){
-        sqlSession.close();
-    }
-
-}

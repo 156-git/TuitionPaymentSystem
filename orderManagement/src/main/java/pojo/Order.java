@@ -73,4 +73,18 @@ public class Order {
     public void setOrder_state(int order_state) {
         this.order_state = order_state;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "order_seq=" + order_seq +
+                ", order_num='" + order_num + '\'' +
+                ", stu_num='" + stu_num + '\'' +
+                ", stu_name='" + stu_name + '\'' +
+                ", stu_class='" + stu_class + '\'' +
+                ", stu_money=" + stu_money +
+                ", order_time='" + order_time + '\'' +
+                ", order_state=" + order_state +
+                '}';
+    }
 }

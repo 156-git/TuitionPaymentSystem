@@ -1,11 +1,15 @@
 import org.junit.Test;
 import pojo.Order;
+import pojo.PageBean;
 import service.OrderService;
+import service.impl.OrderServiceImpl;
 import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.Iterator;
+import java.util.List;
 
-public class TestOrderService {
-    OrderService orderService = new OrderService();
+public class TestOrderServiceImpl {
+    OrderService orderService = new OrderServiceImpl();
 
 
 
@@ -43,7 +47,7 @@ public class TestOrderService {
         order.setOrder_state(order_state);
 
         //调用添加订单业务
-         int i=orderService.addOrder(order);
+         int i= orderService.addOrder(order);
         System.out.println("添加"+i+"条数据成功");
 
     }
@@ -56,7 +60,7 @@ public class TestOrderService {
     public void testDeleteByOrder_num()  {
         //接受参数
         String order_num="KB09010103";
-        int i=orderService.deleteOrder(order_num);
+        int i= orderService.deleteOrder(order_num);
         System.out.println("删除"+i+"个数据");
     }
 
@@ -68,7 +72,24 @@ public class TestOrderService {
     public void testDeleteByOrder_nums(){
         //接受参数
         String[] order_nums={"KB09010103","KB09010104"};
-        int i=orderService.deleteOrders(order_nums);
+        int i= orderService.deleteOrders(order_nums);
         System.out.println("删除"+i+"条数据成功");
     }
+
+
+    //测试分页查询
+    @Test
+    public void testQueryByPage(){
+        PageBean<Order> pageBean=orderService.queryByPage(1,4);
+        List<Order> rows = pageBean.getRows();
+        Iterator<Order> iterator=rows.listIterator();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
+    }
+
+
+
+
 }
