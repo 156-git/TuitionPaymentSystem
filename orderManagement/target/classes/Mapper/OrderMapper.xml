@@ -17,4 +17,10 @@
         <foreach collection="nums" item="num" separator="," open="(" close=")">#{num}</foreach>
     </delete>
 
+<!--    分页查询-->
+
+
+
+
+
 </mapper>
