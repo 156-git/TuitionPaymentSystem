@@ -1,15 +1,8 @@
-import Mapper.OrderMapper;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
 import pojo.Order;
 import pojo.PageBean;
 import service.OrderService;
 import service.impl.OrderServiceImpl;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
