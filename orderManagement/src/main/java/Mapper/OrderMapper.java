@@ -1,12 +1,9 @@
 package Mapper;
 
 import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import pojo.Order;
-import pojo.PageBean;
-
 import java.util.List;
 
 public interface OrderMapper {
@@ -37,11 +34,17 @@ public interface OrderMapper {
     //添加订单
     int insertOrder(Order order);
 
-    //通过订单号查询
-    @Select("select * from orders where order_num=#{order_num}")
-    Order selectByOrder_num(String order_num);
 
-    //通过班级查询
-    @Select("select * from orders where stu_class=#{stu_class}")
-    Order selectByStu_class(String stu_class);
+
+    //通过订单号关键词模糊查询
+    @Select("select * from orders where order_num like #{keyword}")
+    List<Order> selectByOrder_num(String keyword);
+
+
+    //通过班级关键词模糊查询
+    @Select("select * from orders where stu_class like #{keyword}")
+    List<Order> selectByStu_class(String keyword);
+
+
+
 }

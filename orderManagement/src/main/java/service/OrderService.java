@@ -34,5 +34,8 @@ public interface OrderService {
         //释放资源
         void releasesqlSession();
 
+        //关键词查询
+        List<Order> queryOrdersBykeyword(String keyword);
+
     }
 
