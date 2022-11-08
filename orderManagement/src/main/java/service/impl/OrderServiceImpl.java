@@ -14,48 +14,59 @@ public class OrderServiceImpl implements OrderService {
     static SqlSession sqlSession = factory.openSession(true);
     static OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
 
+    static PageBean<Order> pageBean=new PageBean<Order>();
 
 
-    //分页查询
-/*
-    currentPage当前页码
-    pageSize每页显示条数
- */
-    public PageBean<Order> queryByPage(int currentPage, int pageSize){
+    //查询业务
+    public PageBean<Order> queryOrdersByKeyword(String keyword,int currentPage,int pageSize){
 
-         List<Order> rows=orderMapper.selectByPage(currentPage-1,pageSize);
-
-         int totalCount=orderMapper.selectTotalCount();
-
-         PageBean<Order> pageBean=new PageBean<Order>();
-
-         pageBean.setRows(rows);
-         pageBean.setTotalcount(totalCount);
-
-         return pageBean;
-    }
-
-
-    //关键词查询
-    public List<Order> queryOrdersBykeyword(String keyword){
-        keyword="%"+keyword+"%";
+        int total;
         boolean flag;
         List<Order> orders;
-        flag=keyword.matches("%([0-9a-zA-Z])+%");
-        if(flag){
-            orders=orderMapper.selectByOrder_num(keyword);
-        }else {
-            orders=orderMapper.selectByStu_class(keyword);
-        }
 
-        return orders;
+        if(keyword==null||keyword.equals("")){
+            List<Order> rows=orderMapper.selectByPage(currentPage-1,pageSize);
+            int totalCount=orderMapper.selectTotalCount();
+            pageBean.setRows(rows);
+            pageBean.setTotalcount(totalCount);
+        }else {
+            keyword="%"+keyword+"%";
+            flag=keyword.matches("%([0-9a-zA-Z])+%");
+            if (flag) {
+                orders = orderMapper.selectByOrder_num(keyword, currentPage - 1, pageSize);
+                total = orderMapper.selectTotalByOreder_numKey();
+                pageBean.setTotalcount(total);
+                pageBean.setRows(orders);
+
+            } else {
+                orders = orderMapper.selectByStu_class(keyword, currentPage - 1, pageSize);
+                total = orderMapper.selectTotalByStu_classKey();
+                pageBean.setTotalcount(total);
+                pageBean.setRows(orders);
+            }
+        }
+        return pageBean;
     }
 
 
 
     //查询总金额
-    public float queryTotalAmount() {
-        return orderMapper.selectTotalAmount();
+    public float queryTotalAmount(String keyword) {
+        float sum;
+        if(keyword==null||keyword.equals("")){
+            sum=orderMapper.selectTotalAmount();
+        }else {
+            keyword="%"+keyword+"%";
+            boolean flag;
+            flag=keyword.matches("%([0-9a-zA-Z])+%");
+            if (flag){
+                sum=orderMapper.selectTotalAmountByOrder_numKeyword(keyword);
+            }else {
+                sum=orderMapper.selectTotalAmountByStu_classKeyword(keyword);
+            }
+        }
+
+        return sum;
     }
 
 
@@ -66,8 +77,14 @@ public class OrderServiceImpl implements OrderService {
 
 
     //根据订单号删除订单
-    public  int deleteOrder(String order_num){
-      return  orderMapper.deleteByOrder_num(order_num);
+    public PageBean<Order> deleteOrder(String keyword,String order_num,int currentPage,int pageSize ){
+        orderMapper.deleteByOrder_num(order_num);
+       if((keyword==null)||keyword.equals("")){
+
+       }
+
+
+       return pageBean;
     }
 
 

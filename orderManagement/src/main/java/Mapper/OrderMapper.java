@@ -7,18 +7,22 @@ import pojo.Order;
 import java.util.List;
 
 public interface OrderMapper {
-    //查询并返回总金额
+    //返回总金额
     @Select("select SUM(stu_money) from orders")
     float selectTotalAmount();
+
+    //根据模糊订单号关键词返回总金额
+    @Select("select SUM(stu_money) from orders where order_num like #{keyword}")
+    float selectTotalAmountByOrder_numKeyword(String keyword);
+
+    //根据模糊班级返回总金额
+    @Select("select SUM(stu_money) from orders where stu_class like #{keyword}")
+    float selectTotalAmountByStu_classKeyword(String keyword);
+
 
     //查询总数据条数
     @Select("select  count(*)  from orders")
     int selectTotalCount();
-
-
-    //根据订单号查询订单
-
-    //根据班级查询订单
 
     //分页查询
     @Select("select * from orders limit #{begin} , #{size}")
@@ -37,13 +41,21 @@ public interface OrderMapper {
 
 
     //通过订单号关键词模糊查询
-    @Select("select * from orders where order_num like #{keyword}")
-    List<Order> selectByOrder_num(String keyword);
+    @Select("select * from orders where order_num like #{keyword} limit  #{begin} , #{size} ")
+    List<Order> selectByOrder_num(@Param("keyword")String keyword,@Param("begin") int begin, @Param("size") int size);
 
 
     //通过班级关键词模糊查询
-    @Select("select * from orders where stu_class like #{keyword}")
-    List<Order> selectByStu_class(String keyword);
+    @Select("select * from orders where stu_class like #{keyword} limit  #{begin} , #{size} ")
+    List<Order> selectByStu_class(@Param("keyword")String keyword,@Param("begin") int begin, @Param("size") int size);
+
+    //通过订单号模糊关键词统计订单条数
+    @Select("select count(*) from orders where order_num like #{keyword} ")
+    int selectTotalByOreder_numKey();
+
+    //通过班级模糊关键词统计订单条数
+    @Select("select count(*) from orders where stu_class like #{keyword} ")
+    int selectTotalByStu_classKey();
 
 
 

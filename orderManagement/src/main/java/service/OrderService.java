@@ -1,22 +1,13 @@
 package service;
 
-import Mapper.OrderMapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 import pojo.Order;
 import pojo.PageBean;
-import util.SqlSessionFactoryUtils;
-
-import java.util.List;
 
 public interface OrderService {
-        //分页查询
-        PageBean<Order> queryByPage(int currentPage, int pageSize);
 
 
         //查询总金额
-        float queryTotalAmount();
+        float queryTotalAmount(String keyword);
 
 
         //添加订单
@@ -24,7 +15,7 @@ public interface OrderService {
 
 
         //根据订单号删除订单
-        int deleteOrder(String order_num);
+        PageBean<Order> deleteOrder(String keyword ,String order_num,int currentPage,int pageSize );
 
 
         //根据一系列订单号删除订单
@@ -35,7 +26,7 @@ public interface OrderService {
         void releasesqlSession();
 
         //关键词查询
-        List<Order> queryOrdersBykeyword(String keyword);
+        PageBean<Order> queryOrdersByKeyword(String keyword,int currentPage,int pageSize);
 
     }
 

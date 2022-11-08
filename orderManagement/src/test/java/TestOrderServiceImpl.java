@@ -17,8 +17,7 @@ public class TestOrderServiceImpl {
     //测试查询总金额业务
     @Test
     public void testTotalAmount() {
-        float f = orderService.queryTotalAmount();
-        System.out.println(f);
+        System.out.println();
     }
 
 
@@ -60,8 +59,7 @@ public class TestOrderServiceImpl {
     public void testDeleteByOrder_num()  {
         //接受参数
         String order_num="KB09010103";
-        int i= orderService.deleteOrder(order_num);
-        System.out.println("删除"+i+"个数据");
+        System.out.println("删除"+"个数据");
     }
 
 
@@ -101,11 +99,8 @@ public class TestOrderServiceImpl {
     //测试根据关键字模糊查询业务
     public void testQueryOrdersBykeyword(){
         List<Order> orders;
-        orders=orderService.queryOrdersBykeyword("班");
-        Iterator<Order> iterator=orders.listIterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
+        PageBean<Order> pageBean=new PageBean<Order>();
+        pageBean=orderService.queryOrdersByKeyword("KB09010105",1, 2);
     }
 
 
