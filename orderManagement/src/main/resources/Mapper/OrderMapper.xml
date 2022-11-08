@@ -18,9 +18,18 @@
     </delete>
 
 <!--    分页查询-->
+    
 
 
-
-
-
+<!--    <select id="selectbyconditon1" resultType="Order" >-->
+<!--    select* from orders-->
+<!--    where order_num=#{ordernum}-->
+<!--    </select>-->
+<!--   &lt;!&ndash;-->
+<!--   订单号查询-->
+<!--   &ndash;&gt;-->
+<!--    <select id="slectbyconditon2" resultType="Order">-->
+<!--        select *from orders-->
+<!--        where stu_class=#{stuclass}-->
+<!--    </select>-->
 </mapper>

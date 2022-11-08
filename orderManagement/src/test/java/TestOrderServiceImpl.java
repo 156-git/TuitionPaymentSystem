@@ -1,8 +1,16 @@
+import Mapper.OrderMapper;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
 import pojo.Order;
 import pojo.PageBean;
 import service.OrderService;
 import service.impl.OrderServiceImpl;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
@@ -88,7 +96,39 @@ public class TestOrderServiceImpl {
         }
 
     }
+    @Test
+    public void testSelectByOrder_num() throws IOException {
+        String order_num="71";
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+       OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+
+       Order order=orderMapper.selectByOrder_num(order_num);
+        System.out.println(order);
+sqlSession.close();
+
+    }
+    @Test
+    public void testSelectbystu_class()throws IOException{
+        String stu_class="68";
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        OrderMapper OrderMapper = sqlSession.getMapper(OrderMapper.class);
+
+        Order order= OrderMapper.selectByStu_class(stu_class);
+
+        System.out.println(order);
+        sqlSession.close();
+
+    }
 
 
 

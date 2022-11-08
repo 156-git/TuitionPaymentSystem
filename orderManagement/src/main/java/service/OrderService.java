@@ -1,6 +1,7 @@
 package service;
 
 import Mapper.OrderMapper;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import pojo.Order;
@@ -28,7 +29,6 @@ public interface OrderService {
 
         //根据一系列订单号删除订单
         int deleteOrders(String [] order_nums);
-
 
 
         //释放资源

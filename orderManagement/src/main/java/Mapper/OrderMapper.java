@@ -37,4 +37,11 @@ public interface OrderMapper {
     //添加订单
     int insertOrder(Order order);
 
+    //通过订单号查询
+    @Select("select * from orders where order_num=#{order_num}")
+    Order selectByOrder_num(String order_num);
+
+    //通过班级查询
+    @Select("select * from orders where stu_class=#{stu_class}")
+    Order selectByStu_class(String stu_class);
 }

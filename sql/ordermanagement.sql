@@ -20,7 +20,7 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 USE ordermanagement;
 
-create table orders
+create table select
 (
     order_seq   int auto_increment,
     order_num   varchar(30)   not null,
