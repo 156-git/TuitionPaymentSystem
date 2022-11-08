@@ -8,7 +8,6 @@ import pojo.Order;
 import pojo.PageBean;
 import service.OrderService;
 import service.impl.OrderServiceImpl;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
@@ -96,40 +95,25 @@ public class TestOrderServiceImpl {
         }
 
     }
+
+
     @Test
-    public void testSelectByOrder_num() throws IOException {
-        String order_num="71";
-        String resource = "mybatis-config.xml";
-        InputStream inputStream = Resources.getResourceAsStream(resource);
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-
-       OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
-
-       Order order=orderMapper.selectByOrder_num(order_num);
-        System.out.println(order);
-sqlSession.close();
-
-    }
-    @Test
-    public void testSelectbystu_class()throws IOException{
-        String stu_class="68";
-        String resource = "mybatis-config.xml";
-        InputStream inputStream = Resources.getResourceAsStream(resource);
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-
-        OrderMapper OrderMapper = sqlSession.getMapper(OrderMapper.class);
-
-        Order order= OrderMapper.selectByStu_class(stu_class);
-
-        System.out.println(order);
-        sqlSession.close();
-
+    public void test(){
+        String n="nihao";
+        System.out.println(n.length());
     }
 
+
+    @Test
+    //测试根据关键字模糊查询业务
+    public void testQueryOrdersBykeyword(){
+        List<Order> orders;
+        orders=orderService.queryOrdersBykeyword("班");
+        Iterator<Order> iterator=orders.listIterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
 
 
 }

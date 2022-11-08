@@ -1,14 +1,12 @@
 package service.impl;
 
 import Mapper.OrderMapper;
-import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import pojo.Order;
 import pojo.PageBean;
 import service.OrderService;
 import util.SqlSessionFactoryUtils;
-
 import java.util.List;
 
 public class OrderServiceImpl implements OrderService {
@@ -38,6 +36,20 @@ public class OrderServiceImpl implements OrderService {
     }
 
 
+    //关键词查询
+    public List<Order> queryOrdersBykeyword(String keyword){
+        keyword="%"+keyword+"%";
+        boolean flag;
+        List<Order> orders;
+        flag=keyword.matches("%([0-9a-zA-Z])+%");
+        if(flag){
+            orders=orderMapper.selectByOrder_num(keyword);
+        }else {
+            orders=orderMapper.selectByStu_class(keyword);
+        }
+
+        return orders;
+    }
 
 
 
