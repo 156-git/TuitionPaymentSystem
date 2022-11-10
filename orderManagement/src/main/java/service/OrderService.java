@@ -23,10 +23,10 @@ public interface OrderService {
 
 
         //释放资源
-        void releasesqlSession();
+        void releaseSqlSession();
 
         //关键词查询
-        PageBean<Order> queryOrdersByKeyword(String keyword,int currentPage,int pageSize);
+        PageBean<Order> queryOrdersByKeyWord(String keyword,int currentPage,int pageSize);
 
     }
 

@@ -12,8 +12,6 @@ public class TestOrderServiceImpl {
     OrderService orderService = new OrderServiceImpl();
 
 
-
-
     //测试查询总金额业务
     @Test
     public void testTotalAmount() {
@@ -75,32 +73,12 @@ public class TestOrderServiceImpl {
     }
 
 
-    //测试分页查询
-    @Test
-    public void testQueryByPage(){
-        PageBean<Order> pageBean=orderService.queryByPage(1,4);
-        List<Order> rows = pageBean.getRows();
-        Iterator<Order> iterator=rows.listIterator();
-        while(iterator.hasNext()){
-            System.out.println(iterator.next());
-        }
-
-    }
-
-
-    @Test
-    public void test(){
-        String n="nihao";
-        System.out.println(n.length());
-    }
-
-
     @Test
     //测试根据关键字模糊查询业务
-    public void testQueryOrdersBykeyword(){
+    public void testQueryOrdersByKeyWord(){
         List<Order> orders;
-        PageBean<Order> pageBean=new PageBean<Order>();
-        pageBean=orderService.queryOrdersByKeyword("KB09010105",1, 2);
+        PageBean<Order> pageBean=new PageBean<>();
+        pageBean=orderService.queryOrdersByKeyWord("KB09010105",1, 2);
     }
 
 

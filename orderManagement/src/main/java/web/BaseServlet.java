@@ -17,7 +17,7 @@ public class BaseServlet extends HttpServlet {
         //获取方法索引
         int index=uri.lastIndexOf('/');
         //获取方法名
-        String mothedName=uri.substring(index+1);
+        String methodName=uri.substring(index+1);
 
         //获取本身字节码
         Class<? extends BaseServlet> cls=this.getClass();
@@ -25,16 +25,14 @@ public class BaseServlet extends HttpServlet {
         try {
 
             //获取方法对象
-            Method method = cls.getMethod(mothedName, HttpServletRequest.class, HttpServletResponse.class);
+            Method method = cls.getMethod(methodName, HttpServletRequest.class, HttpServletResponse.class);
             //执行方法
             method.invoke(this,req,resp);
 
         } catch (NoSuchMethodException e) {
             throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
+        } catch (InvocationTargetException | IllegalAccessException e) {
+            e.printStackTrace();
         }
 
     }

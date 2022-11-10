@@ -7,6 +7,7 @@ import pojo.Order;
 import java.util.List;
 
 public interface OrderMapper {
+
     //返回总金额
     @Select("select SUM(stu_money) from orders")
     float selectTotalAmount();
@@ -28,6 +29,7 @@ public interface OrderMapper {
     @Select("select * from orders limit #{begin} , #{size}")
     List<Order> selectByPage(@Param("begin") int begin, @Param("size") int size);
 
+
     //删除订单  通过订单号删除
     @Delete("delete from orders where order_num=#{order_num}")
     int deleteByOrder_num(String order_num);
@@ -35,15 +37,14 @@ public interface OrderMapper {
     //删除订单  批量删除
     int deleteByOrder_nums(@Param("nums") String[] order_nums);
 
+
     //添加订单
     int insertOrder(Order order);
-
 
 
     //通过订单号关键词模糊查询
     @Select("select * from orders where order_num like #{keyword} limit  #{begin} , #{size} ")
     List<Order> selectByOrder_num(@Param("keyword")String keyword,@Param("begin") int begin, @Param("size") int size);
-
 
     //通过班级关键词模糊查询
     @Select("select * from orders where stu_class like #{keyword} limit  #{begin} , #{size} ")
@@ -51,12 +52,11 @@ public interface OrderMapper {
 
     //通过订单号模糊关键词统计订单条数
     @Select("select count(*) from orders where order_num like #{keyword} ")
-    int selectTotalByOreder_numKey();
+    int selectTotalByOrder_numKey();
 
     //通过班级模糊关键词统计订单条数
     @Select("select count(*) from orders where stu_class like #{keyword} ")
     int selectTotalByStu_classKey();
-
 
 
 }
