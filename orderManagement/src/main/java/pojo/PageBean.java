@@ -4,16 +4,16 @@ import java.util.List;
 
 public class PageBean<T> {
     //总记录数
-    private int totalcount;
+    private int totalCount;
     //当前页面数
     private List<T> rows;
 
-    public int getTotalcount() {
-        return totalcount;
+    public int getTotalCount() {
+        return totalCount;
     }
 
-    public void setTotalcount(int totalcount) {
-        this.totalcount = totalcount;
+    public void setTotalCount(int totalCount) {
+        this.totalCount = totalCount;
     }
 
     public List<T> getRows() {
@@ -27,7 +27,7 @@ public class PageBean<T> {
     @Override
     public String toString() {
         return "PageBean{" +
-                "totalcount=" + totalcount +
+                "totalCount=" + totalCount +
                 ", rows=" + rows +
                 '}';
     }
