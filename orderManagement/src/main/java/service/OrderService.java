@@ -14,11 +14,11 @@ public interface OrderService {
 
 
         //通过修改订单状态来删除订单
-        PageBean<Order> deleteOrders(String keyword ,String[] order_nums,int currentPage,int pageSize );
+        PageBean<Order> deleteOrders(String[] order_nums,String keyword ,int currentPage,int pageSize );
 
 
         //添加订单
-        int addOrder(Order order);
+        PageBean<Order> addOrder(Order order,String keyword, int currentPage, int pageSize);
 
 
         //释放资源

@@ -76,15 +76,16 @@ public class OrderServiceImpl implements OrderService {
 
 
     //通过修改订单状态来删除订单
-    public PageBean<Order> deleteOrders(String keyword, String[] order_nums, int currentPage, int pageSize) {
+    public PageBean<Order> deleteOrders(String[] order_nums, String keyword, int currentPage, int pageSize) {
         int i = orderMapper.updateStateByOrder_nums(order_nums);
         return query(keyword, currentPage - 1, pageSize);
     }
 
 
     //添加订单
-    public int addOrder(Order order) {
-        return orderMapper.insertOrder(order);
+    public PageBean<Order> addOrder(Order order,String keyword, int currentPage, int pageSize) {
+        int i = orderMapper.insertOrder(order);
+        return query(keyword, currentPage - 1, pageSize);
     }
 
 

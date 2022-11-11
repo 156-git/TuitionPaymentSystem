@@ -13,7 +13,7 @@ public class TestOrderServiceImpl {
 
     //测试查询总金额业务
     @Test
-    public void testTotalAmount() {
+    public  void testTotalAmount() {
         System.out.println();
     }
 
@@ -42,13 +42,19 @@ public class TestOrderServiceImpl {
         order.setOrder_time(stu_time);
         order.setOrder_state(order_state);
 
+
         //调用添加订单业务
-         int i= orderService.addOrder(order);
-        System.out.println("添加"+i+"条数据成功");
+        PageBean<Order> PageBean = orderService.addOrder(order, "9", 3, 5);
+
+//        System.out.println("添加"+i+"条数据成功");
 
     }
 
+@Test
+public void test(){
+   orderService.query("KB09010105", 5, 5);
 
+}
 
 
     //根据order_num删除
@@ -67,8 +73,8 @@ public class TestOrderServiceImpl {
     public void testDeleteByOrder_nums(){
         //接受参数
         String[] order_nums={"KB09010103","KB09010104"};
-        int i= orderService.deleteOrders(order_nums);
-        System.out.println("删除"+i+"条数据成功");
+//        int i= orderService.deleteOrders(order_nums);
+//        System.out.println("删除"+i+"条数据成功");
     }
 
 

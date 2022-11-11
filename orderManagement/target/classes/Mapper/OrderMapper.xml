@@ -11,11 +11,13 @@
         values (null,#{order_num}, #{stu_num}, #{stu_name}, #{stu_class}, #{stu_money}, #{order_time}, #{order_state})
     </insert>
 
-    <!--通过数组order_nums批量删除-->
-    <delete id="deleteByOrder_nums" >
-        delete from orders
+
+    <!--通过数组order_nums修改订单状态-->
+    <update id="updateStateByOrder_nums" >
+        update orders
+        set order_state=0
         where order_num in
         <foreach collection="nums" item="num" separator="," open="(" close=")">#{num}</foreach>
-    </delete>
+    </update>
 
 </mapper>

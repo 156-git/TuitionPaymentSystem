@@ -40,7 +40,7 @@ public interface OrderMapper {
     int deleteByOrder_num(String order_num);
 
     //删除订单  批量删除
-    int deleteByOrder_nums(@Param("nums") String[] order_nums);
+//    int deleteByOrder_nums(@Param("nums") String[] order_nums);
 
 
     //添加订单
