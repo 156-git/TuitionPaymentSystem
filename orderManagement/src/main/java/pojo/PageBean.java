@@ -3,6 +3,10 @@ package pojo;
 import java.util.List;
 
 public class PageBean<T> {
+
+    //总金额
+    private float TotalAmount;
+
     //总记录数
     private int totalCount;
     //当前页面数
@@ -24,10 +28,19 @@ public class PageBean<T> {
         this.rows = rows;
     }
 
+    public float getTotalAmount() {
+        return TotalAmount;
+    }
+
+    public void setTotalAmount(float totalAmount) {
+        TotalAmount = totalAmount;
+    }
+
     @Override
     public String toString() {
         return "PageBean{" +
-                "totalCount=" + totalCount +
+                "TotalAmount=" + TotalAmount +
+                ", totalCount=" + totalCount +
                 ", rows=" + rows +
                 '}';
     }

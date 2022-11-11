@@ -21,27 +21,41 @@ public class OrderServiceImpl implements OrderService {
     public PageBean<Order> query(String keyword, int currentPage, int pageSize) {
 
         int total;
+        float totalMoney;
         List<Order> orders;
 
-        if (keyword == null || keyword.equals("")) {
-            List<Order> rows = orderMapper.selectByPage(currentPage - 1, pageSize);
-            int totalCount = orderMapper.selectTotalCount();
-            pageBean.setRows(rows);
-            pageBean.setTotalCount(totalCount);
+        //无关键词
+        if ( keyword==null||keyword.equals("")) {
+            //设置总金额
+            totalMoney=orderMapper.selectTotalAmount();
+            //一系列订单对象
+            orders= orderMapper.selectByPage(currentPage - 1, pageSize);
+            //记录总条数
+            total = orderMapper.selectTotalCount();
+
+
         } else {
+
             keyword = "%" + keyword + "%";
             boolean flag = keyword.matches("%([0-9a-zA-Z])+%");
-            if (flag) {
+            if (flag) {//订单号关键词
+                totalMoney=orderMapper.selectTotalAmountByOrder_numKeyword(keyword);
                 orders = orderMapper.selectByOrder_num(keyword, currentPage - 1, pageSize);
                 total = orderMapper.selectTotalByOrder_numKey();
 
-            } else {
+            } else {//班级关键词
+
+                totalMoney=orderMapper.selectTotalAmountByStu_classKeyword(keyword);
                 orders = orderMapper.selectByStu_class(keyword, currentPage - 1, pageSize);
                 total = orderMapper.selectTotalByStu_classKey();
             }
-            pageBean.setTotalCount(total);
-            pageBean.setRows(orders);
+
         }
+        //填入pageBean对象
+        pageBean.setTotalAmount(totalMoney);
+        pageBean.setTotalCount(total);
+        pageBean.setRows(orders);
+
         return pageBean;
     }
 
