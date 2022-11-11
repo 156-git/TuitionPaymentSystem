@@ -1,12 +1,12 @@
 package service;
 
 import pojo.Order;
-import pojo.PageBean;
+import pojo.pageBean.OrderManagePageBean;
 
 public interface OrderMangeService {
 
         //关键词查询
-        PageBean<Order> query(String keyword,int currentPage,int pageSize);
+        OrderManagePageBean<Order> query(String keyword, int currentPage, int pageSize);
 
 
         //查询总金额
@@ -14,7 +14,7 @@ public interface OrderMangeService {
 
 
         //通过修改订单状态来删除订单
-        PageBean<Order> deleteOrders(String keyword ,String[] order_nums,int currentPage,int pageSize );
+        OrderManagePageBean<Order> deleteOrders(String keyword , String[] order_nums, int currentPage, int pageSize );
 
 
         //添加订单

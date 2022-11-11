@@ -1,7 +1,6 @@
 package pojo;
 
 public class Order {
-    private int order_seq;
     private String order_num;
     private String stu_num;
     private String stu_name;
@@ -9,14 +8,6 @@ public class Order {
     private float stu_money;
     private String order_time;
     private int order_state;
-
-    public int getOrder_seq() {
-        return order_seq;
-    }
-
-    public void setOrder_seq(int order_seq) {
-        this.order_seq = order_seq;
-    }
 
     public String getOrder_num() {
         return order_num;
@@ -77,7 +68,6 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "order_seq=" + order_seq +
                 ", order_num='" + order_num + '\'' +
                 ", stu_num='" + stu_num + '\'' +
                 ", stu_name='" + stu_name + '\'' +

@@ -4,7 +4,7 @@ import Mapper.OrderManageMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import pojo.Order;
-import pojo.PageBean;
+import pojo.pageBean.OrderManagePageBean;
 import service.OrderMangeService;
 import util.SqlSessionFactoryUtils;
 
@@ -15,11 +15,11 @@ public class OrderMangeServiceImpl implements OrderMangeService {
     static SqlSession sqlSession = factory.openSession(true);
     static OrderManageMapper orderMapper = sqlSession.getMapper(OrderManageMapper.class);
 
-    static PageBean<Order> pageBean = new PageBean<Order>();
+    static OrderManagePageBean<Order> orderManagePageBean = new OrderManagePageBean<Order>();
 
 
     //查询业务
-    public PageBean<Order> query(String keyword, int currentPage, int pageSize) {
+    public OrderManagePageBean<Order> query(String keyword, int currentPage, int pageSize) {
 
         int total;
         float totalMoney;
@@ -49,11 +49,11 @@ public class OrderMangeServiceImpl implements OrderMangeService {
             }
         }
         //填入pageBean对象
-        pageBean.setTotalAmount(totalMoney);
-        pageBean.setTotalCount(total);
-        pageBean.setRows(orders);
+        orderManagePageBean.setTotalAmount(totalMoney);
+        orderManagePageBean.setTotalCount(total);
+        orderManagePageBean.setRows(orders);
 
-        return pageBean;
+        return orderManagePageBean;
     }
 
 
@@ -80,7 +80,7 @@ public class OrderMangeServiceImpl implements OrderMangeService {
 
 
     //通过修改订单状态来删除订单
-    public PageBean<Order> deleteOrders(String keyword, String[] order_nums, int currentPage, int pageSize) {
+    public OrderManagePageBean<Order> deleteOrders(String keyword, String[] order_nums, int currentPage, int pageSize) {
         int i = orderMapper.updateStateByOrder_nums(order_nums);
         return query(keyword, currentPage - 1, pageSize);
     }

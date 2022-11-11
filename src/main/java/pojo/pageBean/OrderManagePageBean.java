@@ -1,8 +1,8 @@
-package pojo;
+package pojo.pageBean;
 
 import java.util.List;
 
-public class PageBean<T> {
+public class OrderManagePageBean<T> {
 
     //总金额
     private float TotalAmount;

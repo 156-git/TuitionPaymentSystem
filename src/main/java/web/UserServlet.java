@@ -2,7 +2,7 @@ package web;
 
 import com.alibaba.fastjson.JSON;
 import pojo.Order;
-import pojo.PageBean;
+import pojo.pageBean.OrderManagePageBean;
 import service.impl.OrderMangeServiceImpl;
 
 import javax.servlet.ServletException;
@@ -30,9 +30,9 @@ public class UserServlet extends BaseServlet{
                 currentPage=Integer.parseInt(request.getParameter("currentPage"));
                 pageSize=Integer.parseInt(request.getParameter("pageSize"));
 
-                PageBean<Order> pageBean=orderService.query(keyword,currentPage,pageSize);
+                OrderManagePageBean<Order> orderManagePageBean =orderService.query(keyword,currentPage,pageSize);
                 //转化JSON数据
-                String jsonString= JSON.toJSONString(pageBean);
+                String jsonString= JSON.toJSONString(orderManagePageBean);
 
                 response.setContentType("text/json;charset=UTF-8");
                 //响应JSON数据

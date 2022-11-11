@@ -1,8 +1,5 @@
 package web;
 
-import com.alibaba.fastjson.JSON;
-import pojo.Order;
-import pojo.PageBean;
 import service.impl.OrderMangeServiceImpl;
 
 import javax.servlet.ServletException;
@@ -25,18 +22,7 @@ public class FeedbackServlet extends BaseServlet{
         public  void queryOrders(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
                 //获取请求方式
                 requestWay=request.getMethod();
-                //获取客户端数据
-                keyword=request.getParameter("keyword");
-                currentPage=Integer.parseInt(request.getParameter("currentPage"));
-                pageSize=Integer.parseInt(request.getParameter("pageSize"));
 
-                PageBean<Order> pageBean=orderService.query(keyword,currentPage,pageSize);
-                //转化JSON数据
-                String jsonString= JSON.toJSONString(pageBean);
-
-                response.setContentType("text/json;charset=UTF-8");
-                //响应JSON数据
-                response.getWriter().write(jsonString);
 
 
         }

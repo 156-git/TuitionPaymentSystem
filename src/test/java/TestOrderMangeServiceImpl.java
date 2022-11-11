@@ -1,6 +1,6 @@
 import org.junit.Test;
 import pojo.Order;
-import pojo.PageBean;
+import pojo.pageBean.OrderManagePageBean;
 import service.OrderMangeService;
 import service.impl.OrderMangeServiceImpl;
 import java.util.Date;
@@ -68,8 +68,8 @@ public class TestOrderMangeServiceImpl {
     //测试根据关键字模糊查询业务
     public void testQueryOrdersByKeyWord(){
         List<Order> orders;
-        PageBean<Order> pageBean=new PageBean<Order>();
-        pageBean= orderMangeService.query("KB09010105",1, 2);
+        OrderManagePageBean<Order> orderManagePageBean =new OrderManagePageBean<Order>();
+        orderManagePageBean = orderMangeService.query("KB09010105",1, 2);
     }
 
 

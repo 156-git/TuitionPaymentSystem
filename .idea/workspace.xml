@@ -9,7 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56198f71-2262-4e08-8330-14c845561656" name="变更" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;orderManagement/src/main/java/Mapper/OrderMapper.java&#10;#&#9;orderManagement/src/main/java/service/OrderService.java&#10;#&#9;orderManagement/src/main/java/service/impl/OrderServiceImpl.java&#10;#&#9;orderManagement/src/main/resources/Mapper/OrderMapper.xml&#10;#&#9;orderManagement/src/main/resources/mybatis-config.xml&#10;#&#9;orderManagement/src/test/java/TestOrderServiceImpl.java&#10;#&#9;orderManagement/target/classes/Mapper/OrderMapper.class&#10;#&#9;orderManagement/target/classes/Mapper/OrderMapper.xml&#10;#&#9;orderManagement/target/classes/mybatis-config.xml&#10;#&#9;orderManagement/target/classes/service/OrderService.class&#10;#&#9;orderManagement/target/classes/util/SqlSessionFactoryUtils.class" />
+    <list default="true" id="56198f71-2262-4e08-8330-14c845561656" name="变更" comment="Merge remote-tracking branch 'origin/master'">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pojo/AbnormalOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pojo/Feedback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pojo/Paylist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pojo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/PageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/pageBean/OrderManagePageBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/OrderMangeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/OrderMangeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/OrderMangeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/OrderMangeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/AbnormalOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/AbnormalOrderServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/FeedbackServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/FeedbackServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/OrderManageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/PaylistServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/PaylistServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestOrderMangeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestOrderMangeServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -251,6 +267,7 @@
       <workItem from="1668179787253" duration="406000" />
       <workItem from="1668180265444" duration="1471000" />
       <workItem from="1668183131299" duration="2261000" />
+      <workItem from="1668185463720" duration="800000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1666885371112</created>
@@ -469,7 +486,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668185337968</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Merge remote-tracking branch 'origin/master'">
+      <created>1668185503003</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1668185503003</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Merge remote-tracking branch 'origin/master'">
+      <created>1668185619804</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1668185619804</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,10 +523,10 @@
     <MESSAGE value="更进" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;orderManagement/src/main/java/Mapper/OrderMapper.java&#10;#&#9;orderManagement/src/test/java/TestService.java" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;orderManagement/src/main/java/service/OrderService.java&#10;#&#9;orderManagement/src/main/java/service/impl/OrderServiceImpl.java&#10;#&#9;orderManagement/src/main/java/web/BaseServlet.java&#10;#&#9;orderManagement/src/test/java/TestOrderServiceImpl.java" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="！" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;orderManagement/src/main/java/Mapper/OrderMapper.java&#10;#&#9;orderManagement/src/main/java/service/OrderService.java&#10;#&#9;orderManagement/src/main/java/service/impl/OrderServiceImpl.java&#10;#&#9;orderManagement/src/main/resources/Mapper/OrderMapper.xml&#10;#&#9;orderManagement/src/main/resources/mybatis-config.xml&#10;#&#9;orderManagement/src/test/java/TestOrderServiceImpl.java&#10;#&#9;orderManagement/target/classes/Mapper/OrderMapper.class&#10;#&#9;orderManagement/target/classes/Mapper/OrderMapper.xml&#10;#&#9;orderManagement/target/classes/mybatis-config.xml&#10;#&#9;orderManagement/target/classes/service/OrderService.class&#10;#&#9;orderManagement/target/classes/util/SqlSessionFactoryUtils.class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;orderManagement/src/main/java/Mapper/OrderMapper.java&#10;#&#9;orderManagement/src/main/java/service/OrderService.java&#10;#&#9;orderManagement/src/main/java/service/impl/OrderServiceImpl.java&#10;#&#9;orderManagement/src/main/resources/Mapper/OrderMapper.xml&#10;#&#9;orderManagement/src/main/resources/mybatis-config.xml&#10;#&#9;orderManagement/src/test/java/TestOrderServiceImpl.java&#10;#&#9;orderManagement/target/classes/Mapper/OrderMapper.class&#10;#&#9;orderManagement/target/classes/Mapper/OrderMapper.xml&#10;#&#9;orderManagement/target/classes/mybatis-config.xml&#10;#&#9;orderManagement/target/classes/service/OrderService.class&#10;#&#9;orderManagement/target/classes/util/SqlSessionFactoryUtils.class" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
