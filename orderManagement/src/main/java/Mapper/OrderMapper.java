@@ -63,5 +63,4 @@ public interface OrderMapper {
     @Update("update orders set stu_money=#{stu_money},order_state=#{order_state},stu_class=#{stu_class},stu_name=#{stu_name},stu_num=#{stu_num},order_time=#{order_time},order_num=#{order_num}  where order_num=#{order_num}")
     int updateOrder(Order order);
 
-
 }
