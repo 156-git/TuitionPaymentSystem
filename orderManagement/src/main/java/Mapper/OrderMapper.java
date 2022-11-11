@@ -31,6 +31,10 @@ public interface OrderMapper {
     List<Order> selectByPage(@Param("begin") int begin, @Param("size") int size);
 
 
+    //批量修改订单状态
+    int updateStateByOrder_nums(@Param("nums") String[] order_nums);
+
+
     //删除订单  通过订单号删除
     @Delete("delete from orders where order_num=#{order_num}")
     int deleteByOrder_num(String order_num);
