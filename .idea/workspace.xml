@@ -9,23 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56198f71-2262-4e08-8330-14c845561656" name="变更" comment="Merge remote-tracking branch 'origin/master'">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pojo/AbnormalOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pojo/Feedback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pojo/Paylist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/PageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/pageBean/OrderManagePageBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/OrderMangeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/OrderMangeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/OrderMangeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/OrderMangeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/AbnormalOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/AbnormalOrderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/FeedbackServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/FeedbackServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/OrderManageServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/PaylistServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/PaylistServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestOrderMangeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestOrderMangeServiceImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="56198f71-2262-4e08-8330-14c845561656" name="变更" comment="Merge remote-tracking branch 'origin/master'" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,26 +58,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/workspace/TuitionFeePay&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "E:/workspace/TuitionFeePay",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Git"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\workspace\DingDanGuanLi\orderManagement\src\main\resources\Mapper" />
@@ -110,6 +94,7 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pojo" />
       <recent name="service.impl" />
       <recent name="service" />
       <recent name="web" />
@@ -267,7 +252,8 @@
       <workItem from="1668179787253" duration="406000" />
       <workItem from="1668180265444" duration="1471000" />
       <workItem from="1668183131299" duration="2261000" />
-      <workItem from="1668185463720" duration="800000" />
+      <workItem from="1668185463720" duration="1159000" />
+      <workItem from="1668210705317" duration="3643000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1666885371112</created>
@@ -500,7 +486,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668185619804</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Merge remote-tracking branch 'origin/master'">
+      <created>1668186279835</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1668186279835</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Merge remote-tracking branch 'origin/master'">
+      <created>1668214351555</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1668214351555</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

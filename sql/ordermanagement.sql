@@ -20,6 +20,8 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 USE ordermanagement;
 
+
+
 DROP TABLE IF EXISTS `orders`;
 
 create table orders
@@ -35,3 +37,38 @@ create table orders
     check ((`order_state` >= 0) and (`order_state` <= 1))
 );
 
+
+DROP TABLE IF EXISTS `feedback`;
+CREATE TABLE `feedback` (
+                            `order_num`  varchar(30) NOT NULL ,
+                            `stu_num`  varchar(30) NOT NULL ,
+                            `stu_name`  varchar(20) NOT NULL ,
+                            `phone`  varchar(30) NOT NULL ,
+                            `time`  datetime NOT NULL ,
+                            `feedbackContent`  varchar(150) NOT NULL ,
+                            `state`  int default 0 NOT NULL ,
+                            PRIMARY KEY (`order_num`),
+                            check ((`state` >= 0) and (`state` <= 1))
+);
+
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+                            `number`  varchar(30) NOT NULL ,
+                            `password`  varchar(20) NOT NULL ,
+                            PRIMARY KEY (`number`)
+);
+
+
+
+DROP TABLE IF EXISTS `paylist`;
+CREATE TABLE `paylist` (
+                            `stu_num`  varchar(30) NOT NULL ,
+                            `stu_name`  varchar(20) NOT NULL ,
+                            `time`  datetime NOT NULL ,
+                            `state`  int default 0 NOT NULL ,
+                            `class`  varchar(30) NOT NULL ,
+                            `payment`  float NOT NULL ,
+                            PRIMARY KEY (`stu_num`),
+                            check ((`state` >= 0) and (`state` <= 1))
+);
