@@ -1,14 +1,25 @@
 package service.impl;
 
-import pojo.User;
+import Mapper.OrderManageMapper;
+import Mapper.UserMapper;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import pojo.Order;
+import pojo.pageBean.OrderManagePageBean;
 import service.UserService;
+import pojo.User;
+import util.SqlSessionFactoryUtils;
 
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl<User> implements UserService {
+    static SqlSessionFactory factory = SqlSessionFactoryUtils.getSqlSessionFactory();
+    static SqlSession sqlSession = factory.openSession(true);
+    static UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
 
-    //验证登录，查询无则返回null
+
     @Override
-    public User verifyLogin() {
-        return null;
+    public pojo.User verifyLogin(String number,String password) {
+
+        return userMapper.selectUser(number, password);
     }
 }

@@ -9,23 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56198f71-2262-4e08-8330-14c845561656" name="变更" comment="Merge remote-tracking branch 'origin/master'">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b0b6191-5cf4-40bc-bfc2-b85bb07fd54e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0b0b6191-5cf4-40bc-bfc2-b85bb07fd54e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TuitionFeePay.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TuitionFeePay.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/ordermanagement.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/ordermanagement.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Mapper/FeedbackMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mapper/FeedbackMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Mapper/OrderManageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mapper/OrderManageMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/AbnormalOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/AbnormalOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/OrderMangeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/OrderMangeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/OrderMangeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/OrderMangeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/PaylistServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/PaylistServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper/AbnormalOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Mapper/AbnormalOrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper/FeedbackMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Mapper/FeedbackMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper/OrderManageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Mapper/OrderManageMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper/PaylistMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Mapper/PaylistMapper.xml" afterDir="false" />
-    </list>
+    <list default="true" id="56198f71-2262-4e08-8330-14c845561656" name="变更" comment="Merge remote-tracking branch 'origin/master'" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -273,7 +257,7 @@
       <workItem from="1668210705317" duration="11122000" />
       <workItem from="1668223985588" duration="105000" />
       <workItem from="1668227641367" duration="9617000" />
-      <workItem from="1668243146844" duration="9563000" />
+      <workItem from="1668243146844" duration="9923000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1666885371112</created>
@@ -548,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668239107677</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Merge remote-tracking branch 'origin/master'">
+      <created>1668258125963</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1668258125963</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
