@@ -23,7 +23,6 @@ USE ordermanagement;
 
 
 DROP TABLE IF EXISTS `orders`;
-
 create table orders
 (
     order_num   varchar(30)   not null,
@@ -36,6 +35,24 @@ create table orders
     primary key ( order_num),
     check ((`order_state` >= 0) and (`order_state` <= 1))
 );
+
+
+DROP TABLE IF EXISTS `abnormalOrderMapper`;
+create table abnormalOrderMapper
+(
+    order_num   varchar(30)   not null,
+    stu_num     varchar(30)   not null,
+    stu_name    varchar(20)   not null,
+    stu_class   varchar(30)   not null,
+    stu_money   float         not null,
+    order_time  datetime      not null,
+    order_state int default 0 not null,
+    primary key ( order_num),
+    check ((`order_state` >= 0) and (`order_state` <= 1))
+);
+
+
+
 
 
 DROP TABLE IF EXISTS `feedback`;
