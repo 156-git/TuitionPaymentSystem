@@ -1,5 +1,6 @@
 package Mapper;
 
+import org.apache.ibatis.annotations.Param;
 import pojo.AbnormalOrder;
 import pojo.Feedback;
 
@@ -8,7 +9,7 @@ import java.util.List;
 public interface AbnormalOrderMapper {
 
     //根据订单号或者无条件分页查询异常订单
-    List<AbnormalOrder> selectAnOds(String keyword,int currentPage,int pageSize);
+    List<AbnormalOrder> selectAnOds(@Param("keyword") String keyword,@Param("currentPage") int currentPage, @Param("pageSize") int pageSize);
 
     //根据名字关键字查询异常订单
     List<AbnormalOrder> selectAnOdsByName(String stu_name);

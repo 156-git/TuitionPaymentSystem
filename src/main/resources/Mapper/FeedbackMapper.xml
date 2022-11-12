@@ -5,7 +5,17 @@
 
 <mapper namespace="Mapper.FeedbackMapper">
 
-<!--    根据订单号或者无条件分页查询反馈订单-->
+<!--    逻辑删除-->
+    <delete id="deleteFdbksByOrder_num">
+        update feedback set show_state=0 where state=1 in
+                        <foreach collection="nums" open="(" close=")" item="num">
+                            #{num}
+                        </foreach>
+
+    </delete>
+
+
+    <!--    根据订单号或者无条件分页查询反馈订单-->
     <select id="selectFdOds" resultType="pojo.Feedback">
         select *  from feedback
         where
@@ -22,6 +32,18 @@
     <select id="selectFdOdsByName" resultType="pojo.Feedback">
         SELECT  * from feedback where stu_name like #{stu_class}  ORDER BY  state ASC,time  DESC  limit #{currentPage},#{pageSize}
     </select>
+
+
+<!--   修改受理状态-->
+    <update id="updateState">
+        update feedback set state=1 where  order_num=#{order_num}
+    </update>
+
+
+<!--    添加反馈内容-->
+    <update id="updatefdbkCon">
+        update feedback set feedbackContent=#{newCon} where order_num=#{order_num}
+    </update>
 
 
 </mapper>

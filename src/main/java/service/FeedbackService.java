@@ -11,11 +11,13 @@ public interface FeedbackService {
 
 
     //处理订单反馈，添加反馈内容
-    int modifyFeedback(String order_num,String content);
+    int addFdback(String order_num, String fdbcon);
 
     //只可以逻辑删除已处理的记录
-     int delete(String order_num);
+     int delete(String [] order_num);
 
+    //修改反馈记录状态
+    int modifyFdbkState(String order_num);
 
 
 

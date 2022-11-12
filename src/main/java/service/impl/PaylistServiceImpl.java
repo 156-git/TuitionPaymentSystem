@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import pojo.Paylist;
 import service.PaylistService;
 import util.SqlSessionFactoryUtils;
-
 import java.util.List;
 
 public class PaylistServiceImpl implements PaylistService {

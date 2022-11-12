@@ -19,13 +19,15 @@ public interface PaylistMapper {
     @Select("select * from paylist where state=1  limit  #{begin} , #{size} ")
     List<Paylist> selectAll(@Param("begin") int begin, @Param("size") int size);
 
+
     //修改缴费金额
     @Update("update paylist set payment=#{payment} where stu_num=#{stu_num}")
     int updateMoney(@Param("stu_num") String stu_num,@Param("payment") float payment);
 
+
     //修改订单状态，逻辑删除缴费名单
     @Update("update paylist set state=0 where stu_num=#{stu_num}")
-    int updateStateByStu_nums(String[] stu_nums);
+    int updateStateByStu_nums(@Param("stu_nums") String[] stu_nums);
 
     //添加缴费名单
     int addPayList(Paylist paylist);

@@ -6,7 +6,7 @@
 <mapper namespace="Mapper.PaylistMapper">
 
     <resultMap id="paylistMap" type="Paylist">
-
+        <result column="class" property="stu_class"></result>
     </resultMap>
 
     <insert id="addPayList">
@@ -14,16 +14,13 @@
         values (#{stu_num},#{stu_name},#{time},#{state},#{stu_class},#{payment})
     </insert>
 
-    <select id="selectByStu_num">
+    <select id="selectByStu_num" resultMap="paylistMap">
         select * from paylist where stu_num like #{stu_num} and state=1  limit  #{begin} , #{size}
     </select>
 
 
-    <select id="selectByStu_name">
+    <select id="selectByStu_name" resultMap="paylistMap">
         select * from paylist where stu_name like #{stu_name} and state=1  limit  #{begin} , #{size}
     </select>
 
-    <update id="updateStateByStu_nums">
-
-    </update>
 </mapper>

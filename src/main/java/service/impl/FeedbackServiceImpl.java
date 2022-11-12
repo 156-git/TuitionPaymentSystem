@@ -38,17 +38,26 @@ public class FeedbackServiceImpl implements FeedbackService {
 
 
 
-    //
+    //添加反馈内容
     @Override
-    public int modifyFeedback(String order_num, String fdbcon) {
+    public int addFdback(String order_num, String fdbcon) {
+        return fdbkMap.updatefdbkCon(order_num,fdbcon);
 
-        return 0;
     }
 
 
-    //
+    //逻辑删除已处理订单
     @Override
-    public int delete(String order_num) {
-        return 0;
+    public int delete(String [] order_nums) {
+       return fdbkMap.deleteFdbksByOrder_num(order_nums);
+
     }
+
+
+    //修改反馈记录状态
+    @Override
+    public int modifyFdbkState(String order_num) {
+        return fdbkMap.updateState(order_num);
+    }
+
 }
