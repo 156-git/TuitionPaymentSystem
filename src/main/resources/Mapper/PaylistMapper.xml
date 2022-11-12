@@ -5,6 +5,21 @@
 
 <mapper namespace="Mapper.PaylistMapper">
 
+    <insert id="addPayList">
+        insert into paylist
+        values (#{stu_num},#{stu_name},#{time},#{state},#{stu_class},#{payment})
+    </insert>
+
+    <select id="selectByStu_num">
+        select * from paylist where stu_num like #{stu_num} and state=1  limit  #{begin} , #{size}
+    </select>
 
 
+    <select id="selectByStu_name">
+        select * from paylist where stu_name like #{stu_name} and state=1  limit  #{begin} , #{size}
+    </select>
+
+    <update id="updateStateByStu_nums">
+
+    </update>
 </mapper>

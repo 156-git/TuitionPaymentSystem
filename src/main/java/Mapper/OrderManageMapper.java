@@ -22,10 +22,6 @@ public interface OrderManageMapper {
 
 
 
-
-
-
-
     //查询总数据条数
     @Select("select  count(*)  from orders")
     int selectTotalCount();
@@ -37,11 +33,6 @@ public interface OrderManageMapper {
     //通过班级模糊关键词统计订单条数
     @Select("select count(*) from orders where stu_class like #{keyword} and order_state=1")
     int selectTotalByStu_classKey();
-
-
-
-
-
 
 
 
@@ -59,12 +50,6 @@ public interface OrderManageMapper {
 
 
 
-
-
-
-
-
-
     //修改订单
     @Update("update orders set stu_money=#{stu_money},order_state=#{order_state},stu_class=#{stu_class},stu_name=#{stu_name},stu_num=#{stu_num},order_time=#{order_time},order_num=#{order_num}  where order_num=#{order_num}")
     int updateOrder(Order order);
@@ -76,11 +61,5 @@ public interface OrderManageMapper {
 
     //添加订单
     int insertOrder(Order order);
-
-
-
-
-
-
 
 }
