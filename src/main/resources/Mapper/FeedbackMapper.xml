@@ -5,6 +5,23 @@
 
 <mapper namespace="Mapper.FeedbackMapper">
 
+<!--    根据订单号或者无条件分页查询反馈订单-->
+    <select id="selectFdOds" resultType="pojo.Feedback">
+        select *  from feedback
+        <where>
+            state=0
+            <if test="keyword!=null and keyword!='' ">
+                and order_num like #{order_num}
+            </if>
+        </where>
+        limit #{currentPage},#{pageSize}
+    </select>
+
+
+<!--    根据名字关键字查询异常订单-->
+    <select id="selectFdOdsByName" resultType="pojo.Feedback">
+        SELECT  * from feedback where stu_name like #{stu_class} limit #{currentPage},#{pageSize}
+    </select>
 
 
 </mapper>

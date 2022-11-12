@@ -12,10 +12,10 @@ import java.util.List;
 
 public class OrderMangeServiceImpl implements OrderMangeService {
     static SqlSessionFactory factory = SqlSessionFactoryUtils.getSqlSessionFactory();
-    static SqlSession sqlSession = factory.openSession(true);
-    static OrderManageMapper orderMapper = sqlSession.getMapper(OrderManageMapper.class);
+    SqlSession sqlSession = factory.openSession(true);
+    OrderManageMapper orderMapper = sqlSession.getMapper(OrderManageMapper.class);
 
-    static OrderManagePageBean<Order> orderManagePageBean = new OrderManagePageBean<Order>();
+    OrderManagePageBean<Order> orderManagePageBean = new OrderManagePageBean<Order>();
 
 
     //查询业务
@@ -34,7 +34,7 @@ public class OrderMangeServiceImpl implements OrderMangeService {
             //记录总条数
             total = orderMapper.selectTotalCount();
         } else {
-            keyword = "%" + keyword + "%";
+            keyword = "%"+keyword + "%";
             boolean flag = keyword.matches("%([0-9a-zA-Z])+%");
             if (flag) {
                 //订单号关键词
@@ -65,7 +65,7 @@ public class OrderMangeServiceImpl implements OrderMangeService {
         if (keyword == null || keyword.equals("")) {
             sum = orderMapper.selectTotalAmount();
         } else {
-            keyword = "%" + keyword + "%";
+            keyword = "%"+keyword + "%";
             boolean flag = keyword.matches("%([0-9a-zA-Z])+%");
             if (flag) {
                 sum = orderMapper.selectTotalAmountByOrder_numKeyword(keyword);

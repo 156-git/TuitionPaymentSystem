@@ -15,6 +15,6 @@ public interface AbnormalOrderService {
 
 
     //逻辑删除指定订单
-    int delete(String order_num);
+    List<AbnormalOrder> delete(String order_num,String keyword, int currentPage, int pageSize);
 
 }
