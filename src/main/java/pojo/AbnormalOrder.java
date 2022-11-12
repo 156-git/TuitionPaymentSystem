@@ -9,6 +9,16 @@ public class AbnormalOrder {
     private String order_time;
     private int order_state;
 
+    private  int show_state;
+
+
+    public int getShow_state() {
+        return show_state;
+    }
+
+    public void setShow_state(int show_state) {
+        this.show_state = show_state;
+    }
 
     public String getOrder_num() {
         return order_num;
@@ -66,7 +76,6 @@ public class AbnormalOrder {
         this.order_state = order_state;
     }
 
-
     @Override
     public String toString() {
         return "AbnormalOrder{" +
@@ -77,6 +86,7 @@ public class AbnormalOrder {
                 ", stu_money=" + stu_money +
                 ", order_time='" + order_time + '\'' +
                 ", order_state=" + order_state +
+                ", show_state=" + show_state +
                 '}';
     }
 }

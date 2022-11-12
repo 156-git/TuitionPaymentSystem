@@ -13,3 +13,7 @@ public interface FeedbackMapper{
     //根据名字关键字查询异常订单
     List<Feedback> selectFdOdsByName(String stu_name);
 }
+
+//修改反馈记录的状态‘
+
+

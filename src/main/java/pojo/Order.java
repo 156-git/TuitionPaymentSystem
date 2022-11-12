@@ -9,6 +9,16 @@ public class Order {
     private String order_time;
     private int order_state;
 
+    private  int show_state;
+
+    public int getShow_state() {
+        return show_state;
+    }
+
+    public void setShow_state(int show_state) {
+        this.show_state = show_state;
+    }
+
     public String getOrder_num() {
         return order_num;
     }
@@ -68,13 +78,14 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                ", order_num='" + order_num + '\'' +
+                "order_num='" + order_num + '\'' +
                 ", stu_num='" + stu_num + '\'' +
                 ", stu_name='" + stu_name + '\'' +
                 ", stu_class='" + stu_class + '\'' +
                 ", stu_money=" + stu_money +
                 ", order_time='" + order_time + '\'' +
                 ", order_state=" + order_state +
+                ", show_state=" + show_state +
                 '}';
     }
 }

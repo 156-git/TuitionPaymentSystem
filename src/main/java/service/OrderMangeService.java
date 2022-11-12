@@ -17,8 +17,7 @@ public interface OrderMangeService {
         OrderManagePageBean<Order> deleteOrders(String keyword , String[] order_nums, int currentPage, int pageSize );
 
 
-        //添加订单
-        int addOrder(Order order);
+
 
 
         //释放资源

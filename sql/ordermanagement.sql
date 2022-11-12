@@ -31,9 +31,9 @@ create table orders
     stu_class   varchar(30)   not null,
     stu_money   float         not null,
     order_time  datetime      not null,
-    order_state int default 0 not null,
-    primary key ( order_num),
-    check ((`order_state` >= 0) and (`order_state` <= 1))
+    order_state int default 1 not null,
+    show_state int default 1 not null ,
+    primary key ( order_num)
 );
 
 
@@ -47,8 +47,8 @@ create table abnormalOrderMapper
     stu_money   float         not null,
     order_time  datetime      not null,
     order_state int default 0 not null,
-    primary key ( order_num),
-    check ((`order_state` >= 0) and (`order_state` <= 1))
+    show_state int default 1  not null ,
+    primary key ( order_num)
 );
 
 
@@ -64,8 +64,8 @@ CREATE TABLE `feedback` (
                             `time`  datetime NOT NULL ,
                             `feedbackContent`  varchar(150) NOT NULL ,
                             `state`  int default 0 NOT NULL ,
-                            PRIMARY KEY (`order_num`),
-                            check ((`state` >= 0) and (`state` <= 1))
+                            `show_state` int  default 1 NOT NULL ,
+                            PRIMARY KEY (`order_num`)
 );
 
 

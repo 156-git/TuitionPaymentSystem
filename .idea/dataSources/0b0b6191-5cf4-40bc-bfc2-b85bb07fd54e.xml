@@ -1045,45 +1045,47 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8_general_ci</CollationName>
     </table>
-    <check id="294" parent="289" name="abnormalordermapper_chk_1">
-      <NameSurrogate>1</NameSurrogate>
-      <Predicate>(`order_state` &gt;= 0) and (`order_state` &lt;= 1)</Predicate>
-    </check>
-    <column id="295" parent="289" name="order_num">
+    <column id="294" parent="289" name="order_num">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="296" parent="289" name="stu_num">
+    <column id="295" parent="289" name="stu_num">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="297" parent="289" name="stu_name">
+    <column id="296" parent="289" name="stu_name">
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="298" parent="289" name="stu_class">
+    <column id="297" parent="289" name="stu_class">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="299" parent="289" name="stu_money">
+    <column id="298" parent="289" name="stu_money">
       <DataType>float|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="300" parent="289" name="order_time">
+    <column id="299" parent="289" name="order_time">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="301" parent="289" name="order_state">
+    <column id="300" parent="289" name="order_state">
       <DataType>int|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
+    </column>
+    <column id="301" parent="289" name="show_state">
+      <DataType>int|0s</DataType>
+      <DefaultExpression>1</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
     </column>
     <index id="302" parent="289" name="PRIMARY">
       <ColNames>order_num</ColNames>
@@ -1095,45 +1097,47 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <check id="304" parent="290" name="feedback_chk_1">
-      <NameSurrogate>1</NameSurrogate>
-      <Predicate>(`state` &gt;= 0) and (`state` &lt;= 1)</Predicate>
-    </check>
-    <column id="305" parent="290" name="order_num">
+    <column id="304" parent="290" name="order_num">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="306" parent="290" name="stu_num">
+    <column id="305" parent="290" name="stu_num">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="307" parent="290" name="stu_name">
+    <column id="306" parent="290" name="stu_name">
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="308" parent="290" name="phone">
+    <column id="307" parent="290" name="phone">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="309" parent="290" name="time">
+    <column id="308" parent="290" name="time">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="310" parent="290" name="feedbackContent">
+    <column id="309" parent="290" name="feedbackContent">
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="311" parent="290" name="state">
+    <column id="310" parent="290" name="state">
       <DataType>int|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
+    </column>
+    <column id="311" parent="290" name="show_state">
+      <DataType>int|0s</DataType>
+      <DefaultExpression>1</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
     </column>
     <index id="312" parent="290" name="PRIMARY">
       <ColNames>order_num</ColNames>
@@ -1145,45 +1149,47 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <check id="314" parent="291" name="orders_chk_1">
-      <NameSurrogate>1</NameSurrogate>
-      <Predicate>(`order_state` &gt;= 0) and (`order_state` &lt;= 1)</Predicate>
-    </check>
-    <column id="315" parent="291" name="order_num">
+    <column id="314" parent="291" name="order_num">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="316" parent="291" name="stu_num">
+    <column id="315" parent="291" name="stu_num">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="317" parent="291" name="stu_name">
+    <column id="316" parent="291" name="stu_name">
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="318" parent="291" name="stu_class">
+    <column id="317" parent="291" name="stu_class">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="319" parent="291" name="stu_money">
+    <column id="318" parent="291" name="stu_money">
       <DataType>float|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="320" parent="291" name="order_time">
+    <column id="319" parent="291" name="order_time">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="321" parent="291" name="order_state">
+    <column id="320" parent="291" name="order_state">
       <DataType>int|0s</DataType>
-      <DefaultExpression>0</DefaultExpression>
+      <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
+    </column>
+    <column id="321" parent="291" name="show_state">
+      <DataType>int|0s</DataType>
+      <DefaultExpression>1</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
     </column>
     <index id="322" parent="291" name="PRIMARY">
       <ColNames>order_num</ColNames>

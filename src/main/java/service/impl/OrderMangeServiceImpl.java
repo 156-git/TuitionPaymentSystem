@@ -35,7 +35,7 @@ public class OrderMangeServiceImpl implements OrderMangeService {
             total = orderMapper.selectTotalCount();
         } else {
             keyword = "%"+keyword + "%";
-            boolean flag = keyword.matches("%([0-9a-zA-Z])+%");
+            boolean flag = keyword.matches("%([0-9a-zA-Z])%");
             if (flag) {
                 //订单号关键词
                 totalMoney = orderMapper.selectTotalAmountByOrder_numKeyword(keyword);
@@ -58,7 +58,6 @@ public class OrderMangeServiceImpl implements OrderMangeService {
 
 
 
-
     //查询总金额
     public float queryTotalAmount(String keyword) {
         float sum;
@@ -78,18 +77,12 @@ public class OrderMangeServiceImpl implements OrderMangeService {
 
 
 
-
     //通过修改订单状态来删除订单
     public OrderManagePageBean<Order> deleteOrders(String keyword, String[] order_nums, int currentPage, int pageSize) {
         int i = orderMapper.updateStateByOrder_nums(order_nums);
         return query(keyword, currentPage - 1, pageSize);
     }
 
-
-    //添加订单
-    public int addOrder(Order order) {
-        return orderMapper.insertOrder(order);
-    }
 
 
     //释放资源

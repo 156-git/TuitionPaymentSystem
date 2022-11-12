@@ -8,18 +8,18 @@
     <!--    根据订单号关键词或无条件查询异常订单-->
     <select id="selectAnOds" resultType="AbnormalOrder">
         select *  from abnormalordermapper
-                  <where>
-                  order_state=0
+                  where
+                  show_state=1
                         <if test="keyword!=null and keyword!='' ">
                              and order_num like #{order_num}
                         </if>
-                  </where>
-                        limit #{currentPage},#{pageSize}
+
+            ORDER BY order_time  DESC   limit #{currentPage},#{pageSize}
     </select>
 
 <!--    根据班级关键词查询异常订单-->
     <select id="selectAnOdsByName" resultType="AbnormalOrder">
-        SELECT  * from abnormalordermapper where stu_class like #{stu_class} limit #{currentPage},#{pageSize}
+        SELECT  * from abnormalordermapper where  show_state=1 and stu_class like #{stu_class}   ORDER BY order_time DESC  limit #{currentPage},#{pageSize}
     </select>
 
 <!--   填写订单，生成一条反馈订单-->
@@ -28,9 +28,9 @@
         VALUES (#{order_num},#{stu_num},#{stu_name},#{phone},#{time},#{feedbackContent})
     </insert>
 
-<!--    修改状态，逻辑删除异常订单-->
+<!--    修改显示状态，逻辑删除异常订单-->
     <update id="deleteModifyState">
-        update abnormalordermapper set order_state=1 where order_num=#{order_num}
+        update abnormalordermapper set  show_state=0 where order_num=#{order_num}
     </update>
 
 

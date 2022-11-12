@@ -1,4 +1,32 @@
 package Mapper;
 
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+import pojo.Paylist;
+
+import java.util.List;
+
 public interface PaylistMapper {
+
+    //通过姓名模糊查询缴费订单
+    List<Paylist> selectByStu_name(@Param("stu_name") String stu_name,@Param("begin") int begin, @Param("size") int size);
+
+    //通过学号模糊查询缴费名单
+    List<Paylist> selectByStu_num(@Param("stu_num") String stu_num,@Param("begin") int begin, @Param("size") int size);
+
+    //查询所有缴费名单
+    @Select("select * from paylist where state=1  limit  #{begin} , #{size} ")
+    List<Paylist> selectAll(@Param("begin") int begin, @Param("size") int size);
+
+    //修改缴费金额
+    @Update("update paylist set payment=#{payment} where stu_num=#{stu_num}")
+    int updateMoney(@Param("stu_num") String stu_num,@Param("payment") float payment);
+
+    //修改订单状态，逻辑删除缴费名单
+    @Update("update paylist set state=0 where stu_num=#{stu_num}")
+    int updateStateByStu_nums(String[] stu_nums);
+
+    //添加缴费名单
+    int addPayList(Paylist paylist);
 }
