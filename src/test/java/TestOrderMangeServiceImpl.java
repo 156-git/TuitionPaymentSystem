@@ -43,8 +43,7 @@ public class TestOrderMangeServiceImpl {
         order.setOrder_state(order_state);
 
         //调用添加订单业务
-         int i= orderMangeService.addOrder(order);
-        System.out.println("添加"+i+"条数据成功");
+
 
     }
 

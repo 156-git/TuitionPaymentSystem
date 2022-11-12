@@ -39,20 +39,20 @@ public class AbnormalOrderServiceImpl implements AbnormalOrderService {
 
 
 
-    //提交反馈后即生成反馈订单
+    //提交反馈后即生成反馈订单,并修改订单为已处理
     @Override
-    public int createFeedback(Feedback feedback) {
+    public int createFeedback(Feedback feedback,String order_num) {
+        anOdMap.updateOrderState(order_num);
         return anOdMap.insertFdbkOrder(feedback);
 
     }
 
 
 
-    //改变状态值逻辑删除
+    //改变状态值,逻辑删除
     @Override
-    public List<AbnormalOrder> delete(String order_num,String keyword, int currentPage, int pageSize) {
-        int i=anOdMap.deleteModifyState(order_num);
-        return query(keyword,currentPage,pageSize);
+    public int delete(String order_num) {
+        return anOdMap.deleteModifyShow_State(order_num);
     }
 
 

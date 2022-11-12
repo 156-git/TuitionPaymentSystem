@@ -1,6 +1,7 @@
 package Mapper;
 
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Update;
 import pojo.AbnormalOrder;
 import pojo.Feedback;
 
@@ -20,7 +21,10 @@ public interface AbnormalOrderMapper {
 
 
     //通过修改状态值达到逻辑删除
-    int deleteModifyState(String order_num);
+    int deleteModifyShow_State(String order_num);
 
+
+    //修改异常订单的处理状态
+    int updateOrderState(String order_num);
 
 }
