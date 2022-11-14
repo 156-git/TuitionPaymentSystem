@@ -11,8 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="56198f71-2262-4e08-8330-14c845561656" name="变更" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Mapper/AbnormalOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mapper/AbnormalOrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper/AbnormalOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Mapper/AbnormalOrderMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +262,8 @@
       <workItem from="1668243146844" duration="14031000" />
       <workItem from="1668387222083" duration="2312000" />
       <workItem from="1668389558964" duration="5119000" />
-      <workItem from="1668395306445" duration="510000" />
+      <workItem from="1668395306445" duration="578000" />
+      <workItem from="1668396380205" duration="208000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1666885371112</created>
@@ -581,7 +580,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668394811903</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1668395830262</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1668395830262</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1668395867845</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1668395867845</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
