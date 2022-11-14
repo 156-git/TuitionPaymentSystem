@@ -15,12 +15,12 @@
     </insert>
 
     <select id="selectByStu_num" resultMap="paylistMap">
-        select * from paylist where stu_num like #{stu_num} and state=1  limit  #{begin} , #{size}
+        select * from paylist where stu_num like #{stu_num} and  show_state=1  limit  #{begin} , #{size}
     </select>
 
 
     <select id="selectByStu_name" resultMap="paylistMap">
-        select * from paylist where stu_name like #{stu_name} and state=1  limit  #{begin} , #{size}
+        select * from paylist where stu_name like #{stu_name} and show_state=1  limit  #{begin} , #{size}
     </select>
 
 </mapper>

@@ -20,6 +20,10 @@ public class OrderManageServlet extends BaseServlet{
         private String keyword;
         private int  currentPage;
         private int  pageSize;
+
+        private  String [] order_nums;
+
+
         //查询
         public  void queryOrders(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
                 //获取请求方式
@@ -40,17 +44,10 @@ public class OrderManageServlet extends BaseServlet{
 
         }
 
+        //删除订单
         public void deleteOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-
-
-        }
-
-        public void addOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-
-        }
-
-        public void modifyOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-
+                orderService.deleteOrders(order_nums);
+                queryOrders(request,response);
         }
 
 

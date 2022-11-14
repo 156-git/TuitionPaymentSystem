@@ -86,6 +86,7 @@ CREATE TABLE `paylist` (
                             `state`  int default 0 NOT NULL ,
                             `class`  varchar(30) NOT NULL ,
                             `payment`  float NOT NULL ,
+                            `show_state` int default 1 NOT NULL ,
                             PRIMARY KEY (`stu_num`),
                             check ((`state` >= 0) and (`state` <= 1))
 );

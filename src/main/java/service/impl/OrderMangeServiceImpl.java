@@ -78,9 +78,9 @@ public class OrderMangeServiceImpl implements OrderMangeService {
 
 
     //通过修改订单状态来删除订单
-    public OrderManagePageBean<Order> deleteOrders(String keyword, String[] order_nums, int currentPage, int pageSize) {
+    public int deleteOrders( String[] order_nums) {
         int i = orderMapper.updateStateByOrder_nums(order_nums);
-        return query(keyword, currentPage - 1, pageSize);
+        return i;
     }
 
 

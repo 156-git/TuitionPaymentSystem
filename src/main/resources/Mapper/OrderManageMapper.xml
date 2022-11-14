@@ -12,7 +12,7 @@
     </insert>
 
 
-    <!--通过数组order_nums修改订单状态-->
+    <!--通过数组order_nums修改订单状态,逻辑删除-->
     <update id="updateStateByOrder_nums" >
         update orders
         set show_state=0

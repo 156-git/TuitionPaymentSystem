@@ -14,7 +14,7 @@ public interface OrderMangeService {
 
 
         //通过修改订单状态来删除订单
-        OrderManagePageBean<Order> deleteOrders(String keyword , String[] order_nums, int currentPage, int pageSize );
+        int deleteOrders( String[] order_nums);
 
 
 

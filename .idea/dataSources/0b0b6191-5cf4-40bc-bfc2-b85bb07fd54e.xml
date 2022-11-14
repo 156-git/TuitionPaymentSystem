@@ -1236,32 +1236,38 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <index id="331" parent="292" name="PRIMARY">
+    <column id="331" parent="292" name="show_state">
+      <DataType>int|0s</DataType>
+      <DefaultExpression>1</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <index id="332" parent="292" name="PRIMARY">
       <ColNames>stu_num</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="332" parent="292" name="PRIMARY">
+    <key id="333" parent="292" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="333" parent="293" name="number">
+    <column id="334" parent="293" name="number">
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="334" parent="293" name="password">
+    <column id="335" parent="293" name="password">
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <index id="335" parent="293" name="PRIMARY">
+    <index id="336" parent="293" name="PRIMARY">
       <ColNames>number</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="336" parent="293" name="PRIMARY">
+    <key id="337" parent="293" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
