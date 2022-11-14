@@ -28,7 +28,7 @@ public class AbnormalOrderServlet extends BaseServlet{
         private int  pageSize;
 
         private String phone;
-        private  String order_num;
+        private  String [] order_nums;
 
         String jsonString;
 
@@ -62,9 +62,9 @@ public class AbnormalOrderServlet extends BaseServlet{
                 //获取请求方式
                 requestWay=request.getMethod();
                 //获取客户端数据
-                order_num=request.getParameter("order_num");
+                order_nums=request.getParameterValues("order_num");
                 //修改显示状态
-                abnormalOrderService.delete(order_num);
+                abnormalOrderService.delete(order_nums);
 
 
         }

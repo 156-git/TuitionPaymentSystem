@@ -15,6 +15,6 @@ public interface AbnormalOrderService {
 
 
     //逻辑删除指定订单
-    int delete(String order_num);
+    int delete(String [] order_nums);
 
 }

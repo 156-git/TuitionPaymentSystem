@@ -31,6 +31,11 @@
 <!--    修改显示状态，逻辑删除异常订单-->
     <update id="deleteModifyShow_State">
         update abnormalordermapper set  show_state=0 where order_num=#{order_num}
+            in
+            <foreach collection="order_nums" item="num" close=")" open="(">
+            #{num}
+             </foreach>
+
     </update>
 
 <!--    修改异常订单的处理状态-->

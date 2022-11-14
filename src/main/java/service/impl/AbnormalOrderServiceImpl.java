@@ -51,8 +51,8 @@ public class AbnormalOrderServiceImpl implements AbnormalOrderService {
 
     //改变状态值,逻辑删除
     @Override
-    public int delete(String order_num) {
-        return anOdMap.deleteModifyShow_State(order_num);
+    public int delete(String [] order_nums) {
+        return anOdMap.deleteModifyShow_State(order_nums);
     }
 
 
