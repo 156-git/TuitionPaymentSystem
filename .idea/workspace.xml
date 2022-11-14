@@ -10,18 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56198f71-2262-4e08-8330-14c845561656" name="变更" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b0b6191-5cf4-40bc-bfc2-b85bb07fd54e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0b0b6191-5cf4-40bc-bfc2-b85bb07fd54e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sql/ordermanagement.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/ordermanagement.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Mapper/PaylistMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mapper/PaylistMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/OrderMangeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/OrderMangeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/OrderMangeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/OrderMangeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/OrderManageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/OrderManageServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/PaylistServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/PaylistServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper/OrderManageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Mapper/OrderManageMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper/PaylistMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Mapper/PaylistMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,21 +266,7 @@
       <workItem from="1668395306445" duration="578000" />
       <workItem from="1668396380205" duration="208000" />
       <workItem from="1668396705555" duration="364000" />
-      <workItem from="1668405799931" duration="4050000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial Commit">
-      <created>1666885371112</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1666885371112</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Initial Commit">
-      <created>1667200237142</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1667200237142</updated>
+      <workItem from="1668405799931" duration="4316000" />
     </task>
     <task id="LOCAL-00003" summary="Initial Commit">
       <created>1667222502043</created>
@@ -621,7 +597,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668397037385</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1668410140097</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1668410140097</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1668410174478</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1668410174478</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

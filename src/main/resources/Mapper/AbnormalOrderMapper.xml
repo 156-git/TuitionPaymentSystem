@@ -7,7 +7,7 @@
 
     <!--    根据订单号关键词或无条件查询异常订单-->
     <select id="selectAnOds" resultType="AbnormalOrder">
-        select *  from abnormalordermapper
+        select *  from abnormalorder
                   where
                   show_state=1
                         <if test="keyword!=null and keyword!='' ">
@@ -19,7 +19,7 @@
 
 <!--    根据班级关键词查询异常订单-->
     <select id="selectAnOdsByName" resultType="AbnormalOrder">
-        SELECT  * from abnormalordermapper where  show_state=1 and stu_class like #{stu_class}   ORDER BY order_time DESC  limit #{currentPage},#{pageSize}
+        SELECT  * from abnormalorder where  show_state=1 and stu_class like #{stu_class}   ORDER BY order_time DESC  limit #{currentPage},#{pageSize}
     </select>
 
 <!--   填写订单，生成一条反馈订单-->
@@ -30,7 +30,7 @@
 
 <!--    修改显示状态，逻辑删除异常订单-->
     <update id="deleteModifyShow_State">
-        update abnormalordermapper set  show_state=0 where order_num=#{order_num}
+        update abnormalorder set  show_state=0 where order_num=#{order_num}
             in
             <foreach collection="order_nums" item="num" close=")" open="(">
             #{num}
@@ -40,7 +40,7 @@
 
 <!--    修改异常订单的处理状态-->
     <update id="updateOrderState">
-        update abnormalordermapper set order_state=1 where order_num=#{order_num}
+        update abnormalorder set order_state=1 where order_num=#{order_num}
  </update>
 
 

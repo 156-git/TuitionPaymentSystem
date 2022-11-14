@@ -37,8 +37,8 @@ create table orders
 );
 
 
-DROP TABLE IF EXISTS `abnormalOrderMapper`;
-create table abnormalOrderMapper
+DROP TABLE IF EXISTS `abnormalOrder`;
+create table abnormalOrder
 (
     order_num   varchar(30)   not null,
     stu_num     varchar(30)   not null,

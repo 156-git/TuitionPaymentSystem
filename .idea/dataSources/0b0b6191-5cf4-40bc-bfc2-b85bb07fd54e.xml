@@ -1025,7 +1025,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <user id="288" parent="1" name="star">
       <Host>localhost</Host>
     </user>
-    <table id="289" parent="277" name="abnormalordermapper">
+    <table id="289" parent="277" name="abnormalorder">
       <Engine>InnoDB</Engine>
       <CollationName>utf8_general_ci</CollationName>
     </table>
