@@ -17,9 +17,6 @@ public interface OrderMangeService {
         int deleteOrders( String[] order_nums);
 
 
-
-
-
         //释放资源
         void releaseSqlSession();
 

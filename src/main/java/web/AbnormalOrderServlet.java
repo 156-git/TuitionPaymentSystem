@@ -37,7 +37,7 @@ public class AbnormalOrderServlet extends BaseServlet{
 
 
         //查询
-        public  void queryaAbnormalOrders(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        public  void queryAbnormalOrders(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
                 //获取请求方式
                 requestWay=request.getMethod();
                 //获取客户端数据
@@ -62,17 +62,17 @@ public class AbnormalOrderServlet extends BaseServlet{
                 //获取请求方式
                 requestWay=request.getMethod();
                 //获取客户端数据
-                order_nums=request.getParameterValues("order_num");
+                order_nums=request.getParameterValues("order_nums");
                 //修改显示状态
                 abnormalOrderService.delete(order_nums);
                 //再次调用查询
-                queryaAbnormalOrders(request,response);
+                queryAbnormalOrders(request,response);
 
         }
 
 
         //填写反馈意见并添加反馈订单,并修改处理状态
-        public void addOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        public void addFeedback(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
                 //获取json数据
                 jsonString=request.getParameter("feedbkJson");
                 //转换为Feedback对象

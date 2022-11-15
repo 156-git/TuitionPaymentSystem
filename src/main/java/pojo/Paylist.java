@@ -7,7 +7,15 @@ public class Paylist {
     private int state;
     private String stu_class;
     private float payment;
+    private int show_state;
 
+    public int getShow_state() {
+        return show_state;
+    }
+
+    public void setShow_state(int show_state) {
+        this.show_state = show_state;
+    }
 
     public String getStu_num() {
         return stu_num;

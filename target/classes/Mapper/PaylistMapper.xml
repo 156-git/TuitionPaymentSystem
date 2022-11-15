@@ -5,6 +5,49 @@
 
 <mapper namespace="Mapper.PaylistMapper">
 
+    <resultMap id="paylistMap" type="Paylist">
+        <result column="class" property="stu_class"></result>
+    </resultMap>
 
+    <insert id="addPayList">
+        insert into paylist
+        values (#{stu_num},#{stu_name},#{time},#{state},#{stu_class},#{payment})
+    </insert>
+
+    <select id="selectByStu_num" resultMap="paylistMap">
+        select * from paylist where stu_num like #{stu_num} and  show_state=1  limit  #{begin} , #{size}
+    </select>
+
+
+    <select id="selectByStu_name" resultMap="paylistMap">
+        select * from paylist where stu_name like #{stu_name} and show_state=1  limit  #{begin} , #{size}
+    </select>
+
+    <insert id="addPayList">
+        insert into paylist(stu_num, stu_name, time, state, stu_class, payment)
+        values (#{stu_num}, #{stu_name}, #{time}, #{state}, #{stu_class}, #{payment})
+    </insert>
+
+    <select id="selectByStu_num" resultType="Paylist">
+        select *
+        from paylist
+        where stu_num like #{stu_num}
+          and show_state = 1
+        limit #{begin} , #{size}
+    </select>
+
+
+    <select id="selectByStu_name" resultType="Paylist">
+        select *
+        from paylist
+        where stu_name like #{stu_name}
+          and show_state = 1
+        limit #{begin} , #{size}
+    </select>
+
+    <update id="updateShow_stateByStu_nums">
+        update paylist set show_state=0 where state=0 and stu_num in
+        (<foreach collection="array" item="stu_num" separator=",">#{stu_num}</foreach>)
+    </update>
 
 </mapper>

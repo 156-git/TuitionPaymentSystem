@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="orderManagement:war exploded" />
+      <artifact name="TuitionFeePay:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,8 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56198f71-2262-4e08-8330-14c845561656" name="变更" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <change afterPath="$PROJECT_DIR$/src/main/java/web/TestServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/ordermanagement.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/ordermanagement.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/AbnormalOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/AbnormalOrderServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/BaseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/BaseServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/PaylistServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/PaylistServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Mapper/PaylistMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mapper/PaylistMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Mapper/PaylistMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mapper/PaylistMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/AbnormalOrderServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/AbnormalOrderServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/BaseServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/BaseServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/PaylistServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/PaylistServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +79,7 @@
     &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
     &quot;last_opened_file_path&quot;: &quot;E:/workspace/TuitionFeePay&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;库&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facet&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
@@ -95,6 +103,7 @@
       <recent name="E:\workspace\DingDanGuanLi\orderManagement\src" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="web" />
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -104,17 +113,7 @@
       <recent name="service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestOrderMangeServiceImpl.testTotalAmount">
-    <configuration name="TestOrderMangeServiceImpl.testTotalAmount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TuitionFeePay" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestOrderMangeServiceImpl" />
-      <option name="METHOD_NAME" value="testTotalAmount" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Tomcat 9.0.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.65" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -202,15 +201,6 @@
         </option>
       </method>
     </configuration>
-    <list>
-      <item itemvalue="JUnit.TestOrderMangeServiceImpl.testTotalAmount" />
-      <item itemvalue="Tomcat 服务器.Tomcat 9.0.65" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.TestOrderMangeServiceImpl.testTotalAmount" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -266,21 +256,12 @@
       <workItem from="1668395306445" duration="578000" />
       <workItem from="1668396380205" duration="208000" />
       <workItem from="1668396705555" duration="364000" />
-      <workItem from="1668405799931" duration="4316000" />
-    </task>
-    <task id="LOCAL-00003" summary="Initial Commit">
-      <created>1667222502043</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1667222502043</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Initial Commit">
-      <created>1667222538824</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1667222538824</updated>
+      <workItem from="1668405799931" duration="4622000" />
+      <workItem from="1668473804896" duration="1875000" />
+      <workItem from="1668478897756" duration="5046000" />
+      <workItem from="1668484910660" duration="1507000" />
+      <workItem from="1668486783219" duration="359000" />
+      <workItem from="1668498603253" duration="1037000" />
     </task>
     <task id="LOCAL-00005" summary="Initial Commit">
       <created>1667222603220</created>
@@ -611,7 +592,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668410174478</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1668410509020</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1668410509020</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1668410545843</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1668410545843</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

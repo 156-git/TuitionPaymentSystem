@@ -7,7 +7,7 @@
 
     <!--添加order,并返回主键-->
     <insert id="insertOrder" >
-        insert into orders
+        insert into orders(order_num, stu_num, stu_name, stu_class, stu_money, order_time,order_state)
         values (#{order_num}, #{stu_num}, #{stu_name}, #{stu_class}, #{stu_money}, #{order_time}, #{order_state})
     </insert>
 

@@ -46,7 +46,7 @@ public class PaylistServiceImpl implements PaylistService {
     //删除业务，只可以删除未支付订单
     @Override
     public int delete(String[] stu_nums) {
-        return paylistMapper.updateStateByStu_nums(stu_nums);
+        return paylistMapper.updateShow_stateByStu_nums(stu_nums);
     }
 
     //修改业务，可修改总金额
