@@ -84,7 +84,7 @@ CREATE TABLE `paylist` (
                             `stu_name`  varchar(20) NOT NULL ,
                             `time`  datetime NOT NULL ,
                             `state`  int default 0 NOT NULL ,
-                            `class`  varchar(30) NOT NULL ,
+                            `stu_class`  varchar(30) NOT NULL ,
                             `payment`  float NOT NULL ,
                             `show_state` int default 1 NOT NULL ,
                             PRIMARY KEY (`stu_num`),

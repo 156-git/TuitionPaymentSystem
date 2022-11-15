@@ -26,8 +26,7 @@ public interface PaylistMapper {
 
 
     //修改订单状态，逻辑删除缴费名单
-    @Update("update paylist set show_state=0 where stu_num=#{stu_num} and state=0")
-    int updateStateByStu_nums(@Param("stu_nums") String[] stu_nums);
+    int updateShow_stateByStu_nums(String[] stu_nums);
 
     //添加缴费名单
     int addPayList(Paylist paylist);
