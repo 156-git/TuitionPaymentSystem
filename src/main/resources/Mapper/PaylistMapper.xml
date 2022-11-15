@@ -7,6 +7,7 @@
 
 
 
+<!--    增加-->
     <insert id="addPayList">
         insert into paylist(stu_num, stu_name, time, state, stu_class, payment)
         values (#{stu_num}, #{stu_name}, #{time}, #{state}, #{stu_class}, #{payment})
