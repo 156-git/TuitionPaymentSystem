@@ -3,11 +3,19 @@ package Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import pojo.AbnormalOrder;
+import pojo.Order;
 import pojo.Paylist;
 
 import java.util.List;
 
 public interface PaylistMapper {
+
+    //通过state=1来添加订单信息
+   int addOrderByState(Order order);
+
+   //通过state=0来添加异常记录
+    int addAbnormalOrderByState(AbnormalOrder ao);
 
     //通过姓名模糊查询缴费订单
     List<Paylist> selectByStu_name(@Param("stu_name") String stu_name,@Param("begin") int begin, @Param("size") int size);

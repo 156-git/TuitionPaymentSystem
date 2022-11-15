@@ -84,7 +84,7 @@ public class TestOrderMangeServiceImpl {
     @Test
     //测试根据关键字模糊查询业务
     public void testQueryOrder() {
-        OrderManagePageBean<Order> query = orderMangeService.query("5", 1, 3);
+        OrderManagePageBean<Order> query = orderMangeService.query("", 1, 3);
         System.out.println(query);
 
 
