@@ -26,6 +26,7 @@ public class BaseServlet extends HttpServlet {
 
             //执行方法
             method.invoke(this,req,resp);
+
         } catch (NoSuchMethodException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

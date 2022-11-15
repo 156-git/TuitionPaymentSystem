@@ -83,5 +83,8 @@ public class PaylistServlet extends BaseServlet{
                 paylistService.modify(order_num,payment);
         }
 
+        public  void test(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+                System.out.println("你好，paylist");
+        }
 
 }
