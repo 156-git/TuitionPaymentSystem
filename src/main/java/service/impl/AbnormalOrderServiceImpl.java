@@ -26,13 +26,14 @@ public class AbnormalOrderServiceImpl implements AbnormalOrderService {
     @Override
     public List<AbnormalOrder> query(String keyword, int currentPage, int pageSize) {
         flag=keyword.matches("([0-9a-zA-Z])+");
-
-        if (flag||(keyword==null)){//无关键词或订单号关键词
+        if(keyword.equals("")||keyword==null){//无关键词
+            return abnormalOrders=anOdMap.selectAnOds(keyword,currentPage-1,pageSize);
+        }else if (flag){//订单号关键词
             keyword="%"+keyword+"%";
-            return abnormalOrders=anOdMap.selectAnOds(keyword,currentPage,pageSize);
+            return abnormalOrders=anOdMap.selectAnOds(keyword,currentPage-1,pageSize);
         }else {//姓名关键词
             keyword="%"+keyword+"%";
-            return abnormalOrders=anOdMap.selectAnOdsByName(keyword,currentPage,pageSize);
+            return abnormalOrders=anOdMap.selectAnOdsByName(keyword,currentPage-1,pageSize);
         }
 
     }
@@ -41,8 +42,8 @@ public class AbnormalOrderServiceImpl implements AbnormalOrderService {
 
     //提交反馈后即生成反馈订单,并修改订单为已处理
     @Override
-    public int createFeedback(Feedback feedback,String order_num) {
-        anOdMap.updateOrderState(order_num);
+    public int createFeedback(Feedback feedback) {
+        anOdMap.updateOrderState(feedback.getOrder_num());
         return anOdMap.insertFdbkOrder(feedback);
 
     }

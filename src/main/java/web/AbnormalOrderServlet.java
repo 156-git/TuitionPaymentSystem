@@ -77,7 +77,7 @@ public class AbnormalOrderServlet extends BaseServlet{
                 jsonString=request.getParameter("feedbkJson");
                 //转换为Feedback对象
                 feedback=JSON.parseObject(jsonString,Feedback.class);
-                abnormalOrderService.createFeedback(feedback,feedback.getOrder_num());
+                abnormalOrderService.createFeedback(feedback);
 
         }
 

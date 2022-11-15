@@ -11,7 +11,7 @@ public interface AbnormalOrderService {
     List<AbnormalOrder> query(String keyword,int currentPage,int pageSize);
 
     //填写反馈意见并生成反馈订单,并修改异常订单处理状态
-    int createFeedback(Feedback feedback,String order_num);
+    int createFeedback(Feedback feedback);
 
 
     //逻辑删除指定订单

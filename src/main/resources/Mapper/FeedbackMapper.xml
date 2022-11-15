@@ -7,8 +7,8 @@
 
 <!--    逻辑删除-->
     <delete id="deleteFdbksByOrder_num">
-        update feedback set show_state=0 where state=1 in
-                        <foreach collection="nums" open="(" close=")" item="num">
+        update feedback set show_state=0 where state=1 and  order_num in
+                        <foreach collection="nums" open="(" close=")" item="num" separator=",">
                             #{num}
                         </foreach>
 
@@ -21,7 +21,7 @@
         where
             show_state=1
             <if test="keyword!=null and keyword!='' ">
-                and order_num like #{order_num}
+                and order_num like #{keyword}
             </if>
 
         ORDER BY  state ASC,time  DESC  limit #{currentPage},#{pageSize}
@@ -30,7 +30,7 @@
 
 <!--    根据名字关键字查询反馈订单-->
     <select id="selectFdOdsByName" resultType="pojo.Feedback">
-        SELECT  * from feedback where stu_name like #{stu_class}  ORDER BY  state ASC,time  DESC  limit #{currentPage},#{pageSize}
+        SELECT  * from feedback where stu_name like #{keyword}  ORDER BY  state ASC,time  DESC  limit #{currentPage},#{pageSize}
     </select>
 
 
@@ -42,7 +42,7 @@
 
 <!--    添加反馈内容-->
     <update id="updatefdbkCon">
-        update feedback set feedbackContent=#{newCon} where order_num=#{order_num}
+        update feedback set feedbackContent=#{newCon} where show_state=1 and order_num=#{order_num}
     </update>
 
 

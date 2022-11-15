@@ -26,12 +26,14 @@ public class FeedbackServiceImpl implements FeedbackService {
     public List<Feedback> query(String keyword, int currentPage, int pageSize) {
         flag=keyword.matches("([0-9a-zA-Z])+");
 
-        if (flag||(keyword==null)){//无关键词或订单号关键词
+        if (keyword.equals("")||(keyword==null)) {//无关键词或订单号关键词
+            return feedbacks=fdbkMap.selectFdOds(keyword,currentPage-1,pageSize);
+        }else if(flag){
             keyword="%"+keyword+"%";
-            return feedbacks=fdbkMap.selectFdOds(keyword,currentPage,pageSize);
+            return feedbacks=fdbkMap.selectFdOds(keyword,currentPage-1,pageSize);
         }else {//姓名关键词
             keyword="%"+keyword+"%";
-            return feedbacks=fdbkMap.selectFdOdsByName(keyword);
+            return feedbacks=fdbkMap.selectFdOdsByName(keyword,currentPage-1,pageSize);
         }
 
     }

@@ -11,7 +11,7 @@ public interface FeedbackMapper{
     List<Feedback> selectFdOds(@Param("keyword") String keyword, @Param("currentPage") int currentPage,@Param("pageSize") int pageSize);
 
     //根据名字关键字查询异常订单
-    List<Feedback> selectFdOdsByName(String stu_name);
+    List<Feedback> selectFdOdsByName(@Param("keyword") String keyword, @Param("currentPage") int currentPage,@Param("pageSize") int pageSize);
 
     //修改反馈记录的状态
     int updateState(String order_num);

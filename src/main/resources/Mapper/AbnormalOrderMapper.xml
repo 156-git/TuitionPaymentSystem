@@ -30,9 +30,9 @@
 
 <!--    修改显示状态，逻辑删除异常订单-->
     <update id="deleteModifyShow_State">
-        update abnormalorder set  show_state=0 where order_num=#{order_num}
+        update abnormalorder set  show_state=0 where order_num
             in
-            <foreach collection="order_nums" item="num" close=")" open="(">
+            <foreach collection="order_nums" item="num" close=")" open="(" separator=",">
             #{num}
              </foreach>
 
