@@ -35,7 +35,7 @@ public class OrderMangeServiceImpl implements OrderMangeService {
             total = orderMapper.selectTotalCount();
         } else {
             keyword = "%"+keyword + "%";
-            boolean flag = keyword.matches("%([0-9a-zA-Z])%");
+            boolean flag = keyword.matches("%([0-9a-zA-Z])+%");
             if (flag) {
                 //订单号关键词
                 totalMoney = orderMapper.selectTotalAmountByOrder_numKeyword(keyword);

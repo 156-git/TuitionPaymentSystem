@@ -6,6 +6,9 @@ import java.util.List;
 
 public interface PaylistService {
 
+    //添加其他表的数据
+    int addOther(Paylist paylist,String order_num);
+
     //分页显示缴费名单
     List<Paylist> query(String keyword, int currentPage, int pageSize);
 
