@@ -23,16 +23,16 @@ public interface OrderManageMapper {
 
 
     //查询总数据条数
-    @Select("select  count(*)  from orders")
+    @Select("select  count(*)  from orders where show_state=1")
     int selectTotalCount();
 
     //通过订单号模糊关键词统计订单条数
     @Select("select count(*) from orders where order_num like #{keyword} and show_state=1")
-    int selectTotalByOrder_numKey();
+    int selectTotalByOrder_numKey(String keyword);
 
     //通过班级模糊关键词统计订单条数
     @Select("select count(*) from orders where stu_class like #{keyword} and show_state=1")
-    int selectTotalByStu_classKey();
+    int selectTotalByStu_classKey(String keyword);
 
 
 

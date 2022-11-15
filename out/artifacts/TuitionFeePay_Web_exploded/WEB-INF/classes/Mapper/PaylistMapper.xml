@@ -5,27 +5,14 @@
 
 <mapper namespace="Mapper.PaylistMapper">
 
-<!--    通过state=1来添加订单信息-->
-    <insert id="addOrderByState">
-        insert into orders(order_num, stu_num, stu_name, stu_class, stu_money, order_time)
-        values (#{order_num}, #{stu_num}, #{stu_name}, #{stu_class}, #{stu_money}, #{order_time})
-    </insert>
 
 
-<!--    通过state=0来添加异常记录-->
-    <insert id="addAbnormalOrderByState">
-        insert into abnormalorder(order_num, stu_num, stu_name, stu_class, stu_money, order_time)
-        values (#{order_num}, #{stu_num}, #{stu_name}, #{stu_class}, #{stu_money}, #{order_time})
-    </insert>
-
-
-    <!--    添加缴费名单-->
+<!--    增加-->
     <insert id="addPayList">
         insert into paylist(stu_num, stu_name, time, state, stu_class, payment)
         values (#{stu_num}, #{stu_name}, #{time}, #{state}, #{stu_class}, #{payment})
     </insert>
 
-    <!--    根据学号模糊查询-->
     <select id="selectByStu_num" resultType="Paylist">
         select *
         from paylist
@@ -35,7 +22,6 @@
     </select>
 
 
-    <!--    根据姓名模糊查询-->
     <select id="selectByStu_name" resultType="Paylist">
         select *
         from paylist

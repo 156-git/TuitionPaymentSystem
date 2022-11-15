@@ -11,7 +11,7 @@ public interface AbnormalOrderMapper {
     List<AbnormalOrder> selectAnOds(@Param("keyword") String keyword,@Param("currentPage") int currentPage, @Param("pageSize") int pageSize);
 
     //根据名字关键字查询异常订单
-    List<AbnormalOrder> selectAnOdsByName(String stu_name);
+    List<AbnormalOrder> selectAnOdsByName(@Param("keyword") String keyword,@Param("currentPage") int currentPage, @Param("pageSize") int pageSize);
 
 
     //提交反馈后即生成反馈订单

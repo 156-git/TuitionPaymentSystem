@@ -34,18 +34,18 @@ public class OrderMangeServiceImpl implements OrderMangeService {
             //记录总条数
             total = orderMapper.selectTotalCount();
         } else {
-            keyword = "%"+keyword + "%";
+            keyword = "%" + keyword + "%";
             boolean flag = keyword.matches("%([0-9a-zA-Z])+%");
             if (flag) {
                 //订单号关键词
                 totalMoney = orderMapper.selectTotalAmountByOrder_numKeyword(keyword);
                 orders = orderMapper.selectByOrder_num(keyword, currentPage - 1, pageSize);
-                total = orderMapper.selectTotalByOrder_numKey();
+                total = orderMapper.selectTotalByOrder_numKey(keyword);
             } else {
                 //班级关键词
                 totalMoney = orderMapper.selectTotalAmountByStu_classKeyword(keyword);
                 orders = orderMapper.selectByStu_class(keyword, currentPage - 1, pageSize);
-                total = orderMapper.selectTotalByStu_classKey();
+                total = orderMapper.selectTotalByStu_classKey(keyword);
             }
         }
         //填入pageBean对象
@@ -57,14 +57,13 @@ public class OrderMangeServiceImpl implements OrderMangeService {
     }
 
 
-
     //查询总金额
     public float queryTotalAmount(String keyword) {
         float sum;
         if (keyword == null || keyword.equals("")) {
             sum = orderMapper.selectTotalAmount();
         } else {
-            keyword = "%"+keyword + "%";
+            keyword = "%" + keyword + "%";
             boolean flag = keyword.matches("%([0-9a-zA-Z])+%");
             if (flag) {
                 sum = orderMapper.selectTotalAmountByOrder_numKeyword(keyword);
@@ -76,13 +75,10 @@ public class OrderMangeServiceImpl implements OrderMangeService {
     }
 
 
-
     //通过修改订单状态来删除订单
-    public int deleteOrders( String[] order_nums) {
-        int i = orderMapper.updateStateByOrder_nums(order_nums);
-        return i;
+    public int deleteOrders(String[] order_nums) {
+        return orderMapper.updateStateByOrder_nums(order_nums);
     }
-
 
 
     //释放资源

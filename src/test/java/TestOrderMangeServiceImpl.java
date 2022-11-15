@@ -1,9 +1,11 @@
 import org.junit.Test;
+import pojo.AbnormalOrder;
 import pojo.Order;
 import pojo.Paylist;
 import pojo.pageBean.OrderManagePageBean;
 import service.OrderMangeService;
 import service.PaylistService;
+import service.impl.AbnormalOrderServiceImpl;
 import service.impl.OrderMangeServiceImpl;
 import service.impl.PaylistServiceImpl;
 
@@ -84,12 +86,26 @@ public class TestOrderMangeServiceImpl {
     @Test
     //测试根据关键字模糊查询业务
     public void testQueryOrder() {
-        OrderManagePageBean<Order> query = orderMangeService.query("5", 1, 3);
+        OrderManagePageBean<Order> query = orderMangeService.query("", 1, 3);
         System.out.println(query);
 
 
 
     }
+
+
+
+
+    /************************************************************************************/
+    @Test
+    public void testQueryAbnormalOrder(){
+        AbnormalOrderServiceImpl abnormalOrderService=new AbnormalOrderServiceImpl();
+        List<AbnormalOrder> abnormalOrders=abnormalOrderService.query("a",1,3);
+        System.out.println(abnormalOrders);
+    }
+
+
+
 
 
 }

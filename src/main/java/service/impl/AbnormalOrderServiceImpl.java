@@ -32,7 +32,7 @@ public class AbnormalOrderServiceImpl implements AbnormalOrderService {
             return abnormalOrders=anOdMap.selectAnOds(keyword,currentPage,pageSize);
         }else {//姓名关键词
             keyword="%"+keyword+"%";
-            return abnormalOrders=anOdMap.selectAnOdsByName(keyword);
+            return abnormalOrders=anOdMap.selectAnOdsByName(keyword,currentPage,pageSize);
         }
 
     }
