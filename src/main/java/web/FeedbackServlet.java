@@ -57,10 +57,11 @@ public class FeedbackServlet extends BaseServlet{
 
 
         //修改显示状态，实现逻辑删除
-        public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        public void deleteFeedback(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
                //获取订单数组
                 nums=request.getParameterValues("nums");
                 feedbackService.delete(nums);
+                queryFeedbacks(request,response);
 
         }
 

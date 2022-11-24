@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
 
@@ -45,8 +46,10 @@ public class AbnormalOrderServlet extends BaseServlet{
                 currentPage=Integer.parseInt(request.getParameter("currentPage"));
                 pageSize=Integer.parseInt(request.getParameter("pageSize"));
 
+
                 //获取查询数据
                 abnormalOrders=abnormalOrderService.query(keyword,currentPage,pageSize);
+                System.out.println(abnormalOrders);
                 //转化JSON数据
                 jsonString= JSON.toJSONString(abnormalOrders);
 
@@ -74,7 +77,10 @@ public class AbnormalOrderServlet extends BaseServlet{
         //填写反馈意见并添加反馈订单,并修改处理状态
         public void addFeedback(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
                 //获取json数据
-                jsonString=request.getParameter("feedbkJson");
+
+                BufferedReader bufferedReader =request.getReader();
+                jsonString=bufferedReader.readLine();
+                System.out.println(jsonString);
                 //转换为Feedback对象
                 feedback=JSON.parseObject(jsonString,Feedback.class);
                 abnormalOrderService.createFeedback(feedback);

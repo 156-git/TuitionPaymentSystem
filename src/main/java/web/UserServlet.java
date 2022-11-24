@@ -24,7 +24,7 @@ public class UserServlet extends BaseServlet{
         //用户类
         User user;
         //查询
-        public  void queryOrders(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        public  void queryUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
                 //获取请求方式
                 requestWay=request.getMethod();
                 //获取客户端数据

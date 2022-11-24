@@ -1,13 +1,17 @@
 package web;
 
 import javax.servlet.http.*;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class BaseServlet extends HttpServlet {
 
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) {
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws UnsupportedEncodingException {
+
+        //设置请求编码
+        req.setCharacterEncoding("UTF-8");
 
         //获取uri路径
         String uri=req.getRequestURI();

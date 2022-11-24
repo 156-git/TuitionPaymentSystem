@@ -11,7 +11,11 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <form action="/TuitionFeePay/user/queryUser" name="denglu" method="post">
+    账号：<input type="text" name="user_num"/><br/>
+    密码：<input type="text" name="password"/>
+    <button name="tijiao" type="submit">提交</button>
+  </form>
   </body>
 
 </html>

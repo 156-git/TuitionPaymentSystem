@@ -46,6 +46,8 @@ public class OrderManageServlet extends BaseServlet{
 
         //删除订单
         public void deleteOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+
+                order_nums=request.getParameterValues("order_nums");
                 orderService.deleteOrders(order_nums);
                 queryOrders(request,response);
         }

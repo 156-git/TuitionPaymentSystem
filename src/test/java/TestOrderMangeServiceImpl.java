@@ -95,7 +95,7 @@ public class TestOrderMangeServiceImpl {
     @Test
     //测试根据关键字模糊查询业务
     public void testQueryOrder() {
-        OrderManagePageBean<Order> query = orderMangeService.query("1", 1, 3);
+        OrderManagePageBean<Order> query = orderMangeService.query("软", 1, 3);
         System.out.println(query);
 
     }
@@ -108,7 +108,7 @@ public class TestOrderMangeServiceImpl {
     @Test
     public void testQueryAbnormalOrder(){
 
-        List<AbnormalOrder> abnormalOrders=abnormalOrderService.query("1",1,3);
+        List<AbnormalOrder> abnormalOrders=abnormalOrderService.query("软",1,3);
         System.out.println(abnormalOrders);
     }
 
@@ -118,7 +118,7 @@ public class TestOrderMangeServiceImpl {
     @Test
     public void testAbnormalOrderCreateFeedbackService() {
         feedback.setFeedbackContent("hello feedback3");
-        feedback.setOrder_num("1345616");
+        feedback.setOrder_num("1345");
         Date date=new Date();
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String time=simpleDateFormat.format(date);

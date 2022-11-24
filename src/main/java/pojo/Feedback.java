@@ -9,6 +9,17 @@ public class Feedback {
     private String feedbackContent;
     private int state;
 
+    private int show_state;
+
+
+    public int getShow_state() {
+        return show_state;
+    }
+
+    public void setShow_state(int show_state) {
+        this.show_state = show_state;
+    }
+
     public String getOrder_num() {
         return order_num;
     }
@@ -76,6 +87,7 @@ public class Feedback {
                 ", time='" + time + '\'' +
                 ", feedbackContent='" + feedbackContent + '\'' +
                 ", state=" + state +
+                ", show_state=" + show_state +
                 '}';
     }
 }
